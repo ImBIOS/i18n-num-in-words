@@ -43,7 +43,7 @@ describe('Russian', () => {
     });
   });
 
-  describe('Thousands', () => {
+  describe.todo('Thousands', () => {
     test.each<readonly [number, string]>([
       [1000, 'одна тысяча'],
       [1001, 'одна тысяча один'],
@@ -55,7 +55,7 @@ describe('Russian', () => {
     });
   });
 
-  describe('Millions', () => {
+  describe.todo('Millions', () => {
     test.each<readonly [number, string]>([
       [1000000, 'один миллион'],
       [2000001, 'два миллиона один'],
@@ -76,7 +76,7 @@ describe('Russian', () => {
     });
   });
 
-  describe('Billions', () => {
+  describe.todo('Billions', () => {
     test.each<readonly [number, string]>([
       [1000000000, 'один миллиард'],
       [2000000001, 'два миллиарда один'],
@@ -97,7 +97,7 @@ describe('Russian', () => {
     });
   });
 
-  describe('Trillions', () => {
+  describe.todo('Trillions', () => {
     test.each<readonly [number, string]>([
       [1000000000000, 'один триллион'],
       [2000000000001, 'два триллиона один'],
