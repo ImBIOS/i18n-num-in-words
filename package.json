@@ -11,8 +11,8 @@
   },
   "private": true,
   "workspaces": [
-    "library",
-    "website"
+    "apps/*",
+    "packages/*"
   ],
   "scripts": {
     "prepare": "Warning: Replace this with `husky install`"
