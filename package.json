@@ -15,7 +15,7 @@
     "packages/*"
   ],
   "scripts": {
-    "prepare": "Warning: Replace this with `husky install`"
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
