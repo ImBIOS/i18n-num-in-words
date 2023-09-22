@@ -1,0 +1,35 @@
+{
+  "name": "i18n-num-in-words",
+  "description": "Converts numbers to words in any language.",
+  "version": "0.0.0",
+  "license": "to-be-defined",
+  "author": "Imamuzzaki Abu Salam <imamuzzaki@gmail.com>",
+  "homepage": "https://github.com/ImBIOS/i18n-num-in-words",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ImBIOS/i18n-num-in-words"
+  },
+  "private": true,
+  "workspaces": [
+    "library",
+    "website"
+  ],
+  "scripts": {
+    "prepare": "Warning: Replace this with `husky install`"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "bun-types": "latest",
+    "husky": "^8.0.3",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  },
+  "engines": {
+    "bun": ">=1.0.2",
+    "node": ">=20.7.0",
+    "npm": ">=10.1.0",
+    "yarn": "please-use-bun",
+    "pnpm": "please-use-bun"
+  }
+}

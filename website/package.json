@@ -1,0 +1,14 @@
+{
+  "name": "website",
+  "module": "index.ts",
+  "type": "module",
+  "dependencies": {
+    "i18n-num-in-words": "workspace:*"
+  },
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

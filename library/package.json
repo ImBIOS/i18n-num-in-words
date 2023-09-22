@@ -1,0 +1,71 @@
+{
+  "name": "i18n-num-in-words",
+  "description": "Convert numbers to words in any language.",
+  "version": "1.0.0",
+  "license": "to-be-decided",
+  "author": "Imamuzzaki Abu Salam <imamuzzaki@gmail.com>",
+  "homepage": "https://github.com/ImBIOS/i18n-num-in-words",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ImBIOS/i18n-num-in-words"
+  },
+  "keywords": [
+    "modular",
+    "typescript",
+    "i18n",
+    "internationalization",
+    "converter",
+    "number",
+    "words",
+    "bundle-size",
+    "type-safe",
+    "runtime"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "playground": "bun ./playground.js",
+    "file.watch": "bun generate-files.ts",
+    "test": "bun test",
+    "test.watch": "bun test --watch",
+    "coverage": "bun test --coverage",
+    "dev": "concurrently \"bun:file.watch\" \"bun:test.watch\"",
+    "build": "bun build ./src/index.ts --outdir ./dist --splitting --minify",
+    "lint": "eslint .",
+    "lint.fix": "eslint . --fix",
+    "fmt": "prettier --write .",
+    "fmt.check": "prettier --check .",
+    "type.check": "tsc --noEmit",
+    "publish": "npm publish"
+  },
+  "devDependencies": {
+    "@types/eslint": "^8.44.2",
+    "@typescript-eslint/eslint-plugin": "^6.7.2",
+    "@typescript-eslint/parser": "^6.7.2",
+    "bun-types": "1.0.2",
+    "chokidar": "^3.5.3",
+    "concurrently": "^8.2.1",
+    "eslint": "^8.49.0",
+    "typescript": "^5.2.2"
+  }
+}
