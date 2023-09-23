@@ -50,7 +50,7 @@
     "test.watch": "bun test --watch",
     "coverage": "bun test --coverage",
     "dev": "concurrently \"bun:file.watch\" \"bun:test.watch\"",
-    "build": "bun build ./src/index.ts --outdir ./dist --splitting --minify",
+    "build": "bun build ./src/lang/id/index.ts ./src/lang/en/index.ts --outdir ./dist --splitting --minify",
     "lint": "eslint .",
     "lint.fix": "eslint . --fix",
     "fmt": "prettier --write .",

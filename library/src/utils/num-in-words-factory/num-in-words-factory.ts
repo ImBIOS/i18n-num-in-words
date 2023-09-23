@@ -4,18 +4,6 @@ import { generateCacheKey, handleError } from '..';
 let isWarned = false;
 const cache: Record<string, string> = {};
 
-/**
- * Status of the language feature.
- * - `alpha`: The language feature is still in development and may change in the future.
- *    - It is not recommended to use this feature in production.
- *    - Single and double digit number tests are required.
- * - `beta`: The language feature is still in development but is stable enough to be used.
- *    - It may change in the future.
- *    - Single double, triple, thousand, and million number tests are required.
- * - `stable`: The language feature is stable and will not change in the future.
- *    - It is safe to use this feature in production.
- *    - Single double, triple, thousand, million, billion, and trillion number tests are required.
- */
 type Status = 'alpha' | 'beta' | 'stable';
 
 export type NumInWordsOptions<

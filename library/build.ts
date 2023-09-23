@@ -1,8 +1,8 @@
 const build = await Bun.build({
-  entrypoints: ['./src/index.ts'],
+  entrypoints: ['./src/lang/id/index.ts', './src/lang/en/index.ts'],
   splitting: true,
   format: 'esm', // TODO: add 'cjs'
-  minify: true,
+  // minify: true,
   outdir: './dist',
 });
 

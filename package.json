@@ -11,8 +11,8 @@
   },
   "private": true,
   "workspaces": [
-    "apps/*",
-    "packages/*"
+    "library",
+    "website"
   ],
   "scripts": {
     "prepare": "husky install"
