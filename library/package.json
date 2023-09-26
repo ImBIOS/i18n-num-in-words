@@ -7,7 +7,7 @@
   "homepage": "https://github.com/ImBIOS/i18n-num-in-words",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ImBIOS/i18n-num-in-words"
+    "url": "git+https://github.com/ImBIOS/i18n-num-in-words.git"
   },
   "keywords": [
     "modular",
@@ -45,27 +45,27 @@
   },
   "scripts": {
     "playground": "bun ./playground.js",
-    "file.watch": "bun generate-files.ts",
+    "file.watch": "bun generate-files.ts && tsup -w",
     "test": "bun test",
     "test.watch": "bun test --watch",
     "coverage": "bun test --coverage",
     "dev": "concurrently \"bun:file.watch\" \"bun:test.watch\"",
-    "build": "bun build ./src/lang/id/index.ts ./src/lang/en/index.ts --outdir ./dist --splitting --minify",
+    "build": "tsup",
     "lint": "eslint .",
     "lint.fix": "eslint . --fix",
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check .",
-    "type.check": "tsc --noEmit",
-    "publish": "npm publish"
+    "type.check": "tsc --noEmit"
   },
   "devDependencies": {
     "@types/eslint": "^8.44.2",
     "@typescript-eslint/eslint-plugin": "^6.7.2",
     "@typescript-eslint/parser": "^6.7.2",
-    "bun-types": "1.0.2",
+    "bun-types": "1.0.3",
     "chokidar": "^3.5.3",
     "concurrently": "^8.2.1",
     "eslint": "^8.49.0",
+    "tsup": "^7.2.0",
     "typescript": "^5.2.2"
   }
 }

@@ -1,0 +1,1129 @@
+$ bun test
+bun test v1.0.3 (25e69c71)
+
+tests/perf.test.ts:
+
+src/utils/handle-error.test.ts:
+This is an error message
+[0m[32m(pass)[0m handleError > should log an error message in red when silent is true [1.82ms]
+[0m[32m(pass)[0m handleError > should throw an error when silent is false [0.29ms]
+
+src/utils/num-in-words-factory.test.ts:
+[0m[32m(pass)[0m numInWordsFactory > should return a function when called [0.03ms]
+[33mExperimental  (en), alpha feature enabled. This feature is not stable and may change in the future.[0m
+[0m[32m(pass)[0m numInWordsFactory > should warn when experimental is true [0.65ms]
+The fn (en) feature is not stable yet. Please enable the experimental flag to use it.
+[0m[32m(pass)[0m numInWordsFactory > should handle experimental false and non-stable status [0.03ms]
+[0m[32m(pass)[0m numInWordsFactory > should handle experimental false and stable status [0.02ms]
+The fn (en) feature is not stable yet. Please enable the experimental flag to use it.
+[0m[32m(pass)[0m numInWordsFactory > should handle experimental false and default status [0.02ms]
+The fn (en) feature is not stable yet. Please enable the experimental flag to use it.
+[0m[32m(pass)[0m numInWordsFactory > should return an error when experimental false and non-stable status [0.02ms]
+The number 9007199254740992 is too large to be converted.
+[0m[32m(pass)[0m numInWordsFactory > should handle large numbers [0.03ms]
+[0m[32m(pass)[0m numInWordsFactory > should handle memoization [0.02ms]
+[i18n-num-in-words] Generating cache key for 7 in language en
+[i18n-num-in-words] Generating cache key for 8 in language en
+[i18n-num-in-words] Generating cache key for 8 in language en
+[i18n-num-in-words] Returning cached result for 8 in language en
+[0m[32m(pass)[0m numInWordsFactory > should handle debug mode [0.04ms]
+[0m[32m(pass)[0m numInWordsFactory > should output debug message when debug is true, memoize is true, and cache is hit [0.03ms]
+
+src/utils/generate-cache-key.test.ts:
+[0m[32m(pass)[0m generateCacheKey > should generate a cache key with the provided number and language [0.64ms]
+[i18n-num-in-words] Generating cache key for 42 in language en
+[0m[32m(pass)[0m generateCacheKey > should generate a cache key with debug message when debug is true [0.04ms]
+[0m[32m(pass)[0m generateCacheKey > should generate a cache key without debug message when debug is not provided [0.01ms]
+
+src/lang/fr.test.ts:
+[0m[35m(todo)[0m Français > Chiffres simples > 0 devrait retourner zéro
+[0m[35m(todo)[0m Français > Chiffres simples > 1 devrait retourner un
+[0m[35m(todo)[0m Français > Chiffres simples > 2 devrait retourner deux
+[0m[35m(todo)[0m Français > Chiffres simples > 3 devrait retourner trois
+[0m[35m(todo)[0m Français > Chiffres simples > 4 devrait retourner quatre
+[0m[35m(todo)[0m Français > Chiffres simples > 5 devrait retourner cinq
+[0m[35m(todo)[0m Français > Chiffres simples > 6 devrait retourner six
+[0m[35m(todo)[0m Français > Chiffres simples > 7 devrait retourner sept
+[0m[35m(todo)[0m Français > Chiffres simples > 8 devrait retourner huit
+[0m[35m(todo)[0m Français > Chiffres simples > 9 devrait retourner neuf
+[0m[35m(todo)[0m Français > Chiffres doubles > 10 devrait retourner dix
+[0m[35m(todo)[0m Français > Chiffres doubles > 11 devrait retourner onze
+[0m[35m(todo)[0m Français > Chiffres doubles > 12 devrait retourner douze
+[0m[35m(todo)[0m Français > Chiffres doubles > 21 devrait retourner vingt et un
+[0m[35m(todo)[0m Français > Chiffres doubles > 99 devrait retourner quatre-vingt-dix-neuf
+[0m[35m(todo)[0m Français > Chiffres triples > 100 devrait retourner cent
+[0m[35m(todo)[0m Français > Chiffres triples > 101 devrait retourner cent un
+[0m[35m(todo)[0m Français > Chiffres triples > 111 devrait retourner cent onze
+[0m[35m(todo)[0m Français > Chiffres triples > 321 devrait retourner trois cent vingt et un
+[0m[35m(todo)[0m Français > Chiffres triples > 999 devrait retourner neuf cent quatre-vingt-dix-neuf
+[0m[35m(todo)[0m Français > Milliers > 1000 devrait retourner mille
+[0m[35m(todo)[0m Français > Milliers > 1001 devrait retourner mille un
+[0m[35m(todo)[0m Français > Milliers > 2001 devrait retourner deux mille un
+[0m[35m(todo)[0m Français > Milliers > 4321 devrait retourner quatre mille trois cent vingt et un
+[0m[35m(todo)[0m Français > Milliers > 9999 devrait retourner neuf mille neuf cent quatre-vingt-dix-neuf
+[0m[35m(todo)[0m Français > Millions > 1000000 devrait retourner un million
+[0m[35m(todo)[0m Français > Millions > 2000001 devrait retourner deux millions un
+[0m[35m(todo)[0m Français > Millions > 1234567 devrait retourner un million deux cent trente-quatre mille cinq cent soixante-sept
+[0m[35m(todo)[0m Français > Millions > 7654321 devrait retourner sept millions six cent cinquante-quatre mille trois cent vingt et un
+[0m[35m(todo)[0m Français > Millions > 9999999 devrait retourner neuf millions neuf cent quatre-vingt-dix-neuf mille neuf cent quatre-vingt-dix-neuf
+[0m[35m(todo)[0m Français > Milliards > 1000000000 devrait retourner un milliard
+[0m[35m(todo)[0m Français > Milliards > 2000000001 devrait retourner deux milliards un
+[0m[35m(todo)[0m Français > Milliards > 1234567890 devrait retourner un milliard deux cent trente-quatre millions cinq cent soixante-sept mille huit cent quatre-vingt-dix
+[0m[35m(todo)[0m Français > Milliards > 9876543210 devrait retourner neuf milliards huit cent soixante-seize millions cinq cent quarante-trois mille deux cent dix
+[0m[35m(todo)[0m Français > Milliards > 9999999999 devrait retourner neuf milliards neuf cent quatre-vingt-dix-neuf millions neuf cent quatre-vingt-dix-neuf mille neuf cent quatre-vingt-dix-neuf
+[0m[35m(todo)[0m Français > Billions > 1000000000000 devrait retourner un billion
+[0m[35m(todo)[0m Français > Billions > 2000000000001 devrait retourner deux billions un
+[0m[35m(todo)[0m Français > Billions > 1234567890123 devrait retourner un billion deux cent trente-quatre milliards cinq cent soixante-sept millions huit cent quatre-vingt-dix mille cent vingt-trois
+[0m[35m(todo)[0m Français > Billions > 9876543210987 devrait retourner neuf billions huit cent soixante-seize milliards cinq cent quarante-trois millions deux cent dix mille neuf cent quatre-vingt-sept
+[0m[35m(todo)[0m Français > Billions > 9999999999999 devrait retourner neuf billions neuf cent quatre-vingt-dix-neuf milliards neuf cent quatre-vingt-dix-neuf millions neuf cent quatre-vingt-dix-neuf mille neuf cent quatre-vingt-dix-neuf
+
+src/lang/mr.test.ts:
+[0m[35m(todo)[0m मराठी > एक अंक > 0 ने शून्य परत करावे
+[0m[35m(todo)[0m मराठी > एक अंक > 1 ने एक परत करावे
+[0m[35m(todo)[0m मराठी > एक अंक > 2 ने दोन परत करावे
+[0m[35m(todo)[0m मराठी > एक अंक > 3 ने तीन परत करावे
+[0m[35m(todo)[0m मराठी > एक अंक > 4 ने चार परत करावे
+[0m[35m(todo)[0m मराठी > एक अंक > 5 ने पाच परत करावे
+[0m[35m(todo)[0m मराठी > एक अंक > 6 ने सहा परत करावे
+[0m[35m(todo)[0m मराठी > एक अंक > 7 ने सात परत करावे
+[0m[35m(todo)[0m मराठी > एक अंक > 8 ने आठ परत करावे
+[0m[35m(todo)[0m मराठी > एक अंक > 9 ने नऊ परत करावे
+[0m[35m(todo)[0m मराठी > दोन अंक > 10 ने दहा परत करावे
+[0m[35m(todo)[0m मराठी > दोन अंक > 11 ने अकरा परत करावे
+[0m[35m(todo)[0m मराठी > दोन अंक > 12 ने बारा परत करावे
+[0m[35m(todo)[0m मराठी > दोन अंक > 21 ने एकवीस परत करावे
+[0m[35m(todo)[0m मराठी > दोन अंक > 99 ने नव्व्याण्णव परत करावे
+[0m[35m(todo)[0m मराठी > तीन अंक > 100 ने शंभर परत करावे
+[0m[35m(todo)[0m मराठी > तीन अंक > 101 ने शंभर एक परत करावे
+[0m[35m(todo)[0m मराठी > तीन अंक > 111 ने शंभर अकरा परत करावे
+[0m[35m(todo)[0m मराठी > तीन अंक > 321 ने तीनशे सहावे परत करावे
+[0m[35m(todo)[0m मराठी > तीन अंक > 999 ने नऊशे नव्व्याण्णव परत करावे
+[0m[35m(todo)[0m मराठी > हजार > 1000 ने हजार परत करावे
+[0m[35m(todo)[0m मराठी > हजार > 1001 ने हजार एक परत करावे
+[0m[35m(todo)[0m मराठी > हजार > 2001 ने दोन हजार एक परत करावे
+[0m[35m(todo)[0m मराठी > हजार > 4321 ने चार हजार तीनशे एकराण्यात परत करावे
+[0m[35m(todo)[0m मराठी > हजार > 9999 ने नऊ हजार नऊशे नव्व्याण्णव परत करावे
+[0m[35m(todo)[0m मराठी > लाख > 1000000 ने दहा लाख परत करावे
+[0m[35m(todo)[0m मराठी > लाख > 2000001 ने दोन लाख एक परत करावे
+[0m[35m(todo)[0m मराठी > लाख > 1234567 ने बारा लाख तीन शंभर चोवीस हजार पाचशे सत्त्याण्णव परत करावे
+[0m[35m(todo)[0m मराठी > लाख > 7654321 ने सहा लाख पाचशे पाचवीस हजार चोवीस हजार तीनशे एकराण्यात परत करावे
+[0m[35m(todo)[0m मराठी > लाख > 9999999 ने नऊ लाख नऊशे नव्व्याण्णव हजार नऊशे नव्व्याण्णव परत करावे
+[0m[35m(todo)[0m मराठी > कोटी > 10000000 ने दहा कोटी परत करावे
+[0m[35m(todo)[0m मराठी > कोटी > 20000001 ने दोन कोटी एक परत करावे
+[0m[35m(todo)[0m मराठी > कोटी > 1234567890 ने बारा कोटी चौवन्न हजार चोवीस लाख सत्त्याण्णव हजार आठशे नव्व्याण्णव परत करावे
+[0m[35m(todo)[0m मराठी > कोटी > 9876543210 ने नऊ कोटी आठशे सत्त्याण्णव हजार चौवन्न लाख तीन लाख दोन हजार दहा परत करावे
+[0m[35m(todo)[0m मराठी > कोटी > 9999999999 ने नऊ कोटी नऊशे नव्व्याण्णव हजार नऊशे नव्व्याण्णव हजार नऊशे नव्व्याण्णव परत करावे
+
+src/lang/zh.test.ts:
+[0m[32m(pass)[0m Mandarin Chinese > Single digits > 0 should return 零 [0.46ms]
+[0m[32m(pass)[0m Mandarin Chinese > Single digits > 1 should return 一
+[0m[32m(pass)[0m Mandarin Chinese > Single digits > 2 should return 二
+[0m[32m(pass)[0m Mandarin Chinese > Single digits > 3 should return 三
+[0m[32m(pass)[0m Mandarin Chinese > Single digits > 4 should return 四
+[0m[32m(pass)[0m Mandarin Chinese > Single digits > 5 should return 五
+[0m[32m(pass)[0m Mandarin Chinese > Single digits > 6 should return 六
+[0m[32m(pass)[0m Mandarin Chinese > Single digits > 7 should return 七
+[0m[32m(pass)[0m Mandarin Chinese > Single digits > 8 should return 八
+[0m[32m(pass)[0m Mandarin Chinese > Single digits > 9 should return 九
+[0m[32m(pass)[0m Mandarin Chinese > Double digits > 10 should return 十
+[0m[32m(pass)[0m Mandarin Chinese > Double digits > 11 should return 十一
+[0m[32m(pass)[0m Mandarin Chinese > Double digits > 12 should return 十二
+[0m[32m(pass)[0m Mandarin Chinese > Double digits > 21 should return 二十一
+[0m[32m(pass)[0m Mandarin Chinese > Double digits > 99 should return 九十九
+[0m[32m(pass)[0m Mandarin Chinese > Triple digits > 100 should return 一百
+[0m[32m(pass)[0m Mandarin Chinese > Triple digits > 101 should return 一百一
+[0m[32m(pass)[0m Mandarin Chinese > Triple digits > 111 should return 一百十一
+[0m[32m(pass)[0m Mandarin Chinese > Triple digits > 321 should return 三百二十一
+[0m[32m(pass)[0m Mandarin Chinese > Triple digits > 999 should return 九百九十九
+[0m[32m(pass)[0m Mandarin Chinese > Thousands > 1000 should return 一千
+[0m[32m(pass)[0m Mandarin Chinese > Thousands > 1001 should return 一千一
+[0m[32m(pass)[0m Mandarin Chinese > Thousands > 2001 should return 二千一
+[0m[32m(pass)[0m Mandarin Chinese > Thousands > 4321 should return 四千三百二十一
+[0m[32m(pass)[0m Mandarin Chinese > Thousands > 9999 should return 九千九百九十九
+[0m[32m(pass)[0m Mandarin Chinese > Millions > 1000000 should return 一百万
+[0m[32m(pass)[0m Mandarin Chinese > Millions > 2000001 should return 二百万一
+[0m[32m(pass)[0m Mandarin Chinese > Millions > 1234567 should return 一百二十三万四千五百六十七
+[0m[32m(pass)[0m Mandarin Chinese > Millions > 7654321 should return 七百六十五万四千三百二十一
+[0m[32m(pass)[0m Mandarin Chinese > Millions > 9999999 should return 九百九十九万九千九百九十九
+[0m[35m(todo)[0m Mandarin Chinese > Billions > 1000000000000 should return 一万亿
+[0m[35m(todo)[0m Mandarin Chinese > Billions > 2000000000001 should return 二万亿一
+[0m[35m(todo)[0m Mandarin Chinese > Billions > 1234567890123 should return 一万亿二十三百四十亿五六千七百八万九千一百二十三
+[0m[35m(todo)[0m Mandarin Chinese > Billions > 9876543210987 should return 九万亿八千七百六十亿五亿四千二百一万九百八十七
+[0m[35m(todo)[0m Mandarin Chinese > Billions > 9999999999999 should return 九万亿九百九十九亿九百九十九百九十九万九千九百九十九
+[0m[35m(todo)[0m Mandarin Chinese > Trillions > 1000000000000 should return 一万亿
+[0m[35m(todo)[0m Mandarin Chinese > Trillions > 2000000000001 should return 二万亿一
+[0m[35m(todo)[0m Mandarin Chinese > Trillions > 1234567890123 should return 一万亿二十三百四十亿五六千七百八万九千一百二十三
+[0m[35m(todo)[0m Mandarin Chinese > Trillions > 9876543210987 should return 九万亿八千七百六十亿五亿四千二百一万九百八十七
+[0m[35m(todo)[0m Mandarin Chinese > Trillions > 9999999999999 should return 九万亿九百九十九亿九百九十九百九十九万九千九百九十九
+
+src/lang/pt.test.ts:
+[0m[35m(todo)[0m Português > Dígitos individuais > 0 deve retornar zero
+[0m[35m(todo)[0m Português > Dígitos individuais > 1 deve retornar um
+[0m[35m(todo)[0m Português > Dígitos individuais > 2 deve retornar dois
+[0m[35m(todo)[0m Português > Dígitos individuais > 3 deve retornar três
+[0m[35m(todo)[0m Português > Dígitos individuais > 4 deve retornar quatro
+[0m[35m(todo)[0m Português > Dígitos individuais > 5 deve retornar cinco
+[0m[35m(todo)[0m Português > Dígitos individuais > 6 deve retornar seis
+[0m[35m(todo)[0m Português > Dígitos individuais > 7 deve retornar sete
+[0m[35m(todo)[0m Português > Dígitos individuais > 8 deve retornar oito
+[0m[35m(todo)[0m Português > Dígitos individuais > 9 deve retornar nove
+[0m[35m(todo)[0m Português > Dígitos duplos > 10 deve retornar dez
+[0m[35m(todo)[0m Português > Dígitos duplos > 11 deve retornar onze
+[0m[35m(todo)[0m Português > Dígitos duplos > 12 deve retornar doze
+[0m[35m(todo)[0m Português > Dígitos duplos > 21 deve retornar vinte e um
+[0m[35m(todo)[0m Português > Dígitos duplos > 99 deve retornar noventa e nove
+[0m[35m(todo)[0m Português > Dígitos triplos > 100 deve retornar cem
+[0m[35m(todo)[0m Português > Dígitos triplos > 101 deve retornar cento e um
+[0m[35m(todo)[0m Português > Dígitos triplos > 111 deve retornar cento e onze
+[0m[35m(todo)[0m Português > Dígitos triplos > 321 deve retornar trezentos e vinte e um
+[0m[35m(todo)[0m Português > Dígitos triplos > 999 deve retornar novecentos e noventa e nove
+[0m[35m(todo)[0m Português > Milhares > 1000 deve retornar mil
+[0m[35m(todo)[0m Português > Milhares > 1001 deve retornar mil e um
+[0m[35m(todo)[0m Português > Milhares > 2001 deve retornar dois mil e um
+[0m[35m(todo)[0m Português > Milhares > 4321 deve retornar quatro mil trezentos e vinte e um
+[0m[35m(todo)[0m Português > Milhares > 9999 deve retornar nove mil novecentos e noventa e nove
+[0m[35m(todo)[0m Português > Milhões > 1000000 deve retornar um milhão
+[0m[35m(todo)[0m Português > Milhões > 2000001 deve retornar dois milhões e um
+[0m[35m(todo)[0m Português > Milhões > 1234567 deve retornar um milhão duzentos e trinta e quatro mil quinhentos e sessenta e sete
+[0m[35m(todo)[0m Português > Milhões > 7654321 deve retornar sete milhões seiscentos e cinquenta e quatro mil trezentos e vinte e um
+[0m[35m(todo)[0m Português > Milhões > 9999999 deve retornar nove milhões novecentos e noventa e nove mil novecentos e noventa e nove
+[0m[35m(todo)[0m Português > Bilhões > 1000000000 deve retornar um bilhão
+[0m[35m(todo)[0m Português > Bilhões > 2000000001 deve retornar dois bilhões e um
+[0m[35m(todo)[0m Português > Bilhões > 1234567890 deve retornar um bilhão duzentos e trinta e quatro milhões quinhentos e sessenta e sete mil oitocentos e noventa
+[0m[35m(todo)[0m Português > Bilhões > 9876543210 deve retornar nove bilhões oitocentos e setenta e seis milhões quinhentos e quarenta e três mil duzentos e dez
+[0m[35m(todo)[0m Português > Bilhões > 9999999999 deve retornar nove bilhões novecentos e noventa e nove milhões novecentos e noventa e nove mil novecentos e noventa e nove
+[0m[35m(todo)[0m Português > Trilhões > 1000000000000 deve retornar um trilhão
+[0m[35m(todo)[0m Português > Trilhões > 2000000000001 deve retornar dois trilhões e um
+[0m[35m(todo)[0m Português > Trilhões > 1234567890123 deve retornar um trilhão duzentos e trinta e quatro bilhões quinhentos e sessenta e sete milhões oitocentos e noventa mil cento e vinte e três
+[0m[35m(todo)[0m Português > Trilhões > 9876543210987 deve retornar nove trilhões oitocentos e setenta e seis bilhões quinhentos e quarenta e três milhões duzentos e dez mil novecentos e oitenta e sete
+[0m[35m(todo)[0m Português > Trilhões > 9999999999999 deve retornar nove trilhões novecentos e noventa e nove bilhões novecentos e noventa e nove milhões novecentos e noventa e nove mil novecentos e noventa e nove
+
+src/lang/ur.test.ts:
+[0m[35m(todo)[0m اردو > انفرادی اعداد > 0 کو صفر واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > انفرادی اعداد > 1 کو ایک واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > انفرادی اعداد > 2 کو دو واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > انفرادی اعداد > 3 کو تین واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > انفرادی اعداد > 4 کو چار واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > انفرادی اعداد > 5 کو پانچ واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > انفرادی اعداد > 6 کو چھے واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > انفرادی اعداد > 7 کو سات واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > انفرادی اعداد > 8 کو آٹھ واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > انفرادی اعداد > 9 کو نو واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > دو اعداد > 10 کو دس واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > دو اعداد > 11 کو گیارہ واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > دو اعداد > 12 کو بارہ واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > دو اعداد > 21 کو اکیس واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > دو اعداد > 99 کو نواسی واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > تین اعداد > 100 کو سو واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > تین اعداد > 101 کو سو ایک واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > تین اعداد > 111 کو سو گیارہ واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > تین اعداد > 321 کو تین سو اکیس واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > تین اعداد > 999 کو نو سو نواسی واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > ہزار > 1000 کو ایک ہزار واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > ہزار > 1001 کو ایک ہزار ایک واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > ہزار > 2001 کو دو ہزار ایک واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > ہزار > 4321 کو چار ہزار تین سو اکیس واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > ہزار > 9999 کو نو ہزار نو سو نواسی واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > ملین > 1000000 کو ایک ملین واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > ملین > 2000001 کو دو ملین ایک واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > ملین > 1234567 کو ایک ملین ایک سو تیس ہزار چوبیس ہزار پانچ سو ستانوے ستالیس واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > ملین > 7654321 کو سات ملین چھببیس ہزار پانچ سو چوبیس ہزار تین سو اکیس واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > ملین > 9999999 کو نو ملین نو سو نواسی ہزار نو سو نواسی واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > بلین > 1000000000 کو ایک بلین واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > بلین > 2000000001 کو دو بلین ایک واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > بلین > 1234567890 کو ایک بلین ایک سو تیس ہزار پانچ سو چببیس ہزار آٹھ سو نوببیس واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > بلین > 9876543210 کو نو بلین آٹھ سو ستالیس ہزار چوبیس ہزار تین سو دو واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > بلین > 9999999999 کو نو بلین نو سو نواسی ہزار نو سو نواسی واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > ترلین > 1000000000000 کو ایک ترلین واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > ترلین > 2000000000001 کو دو ترلین ایک واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > ترلین > 1234567890123 کو ایک ترلین ایک سو تیس بلین پانچ سو چببیس بلین آٹھ سو نوبیس ہزار ایک سو تیس واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > ترلین > 9876543210987 کو نو ترلین آٹھ سو ستالیس بلین پانچ سو چببیس بلین دو ہزار نو سو ستانوے ستالیس واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > ترلین > 9999999999999 کو نو ترلین نو سو نواسی بلین نو سو نواسی ہزار نو سو نواسی واپس کرنا چاہئے
+
+src/lang/hi.test.ts:
+[0m[35m(todo)[0m हिंदी > एक अंक > 0 को शून्य वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > एक अंक > 1 को एक वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > एक अंक > 2 को दो वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > एक अंक > 3 को तीन वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > एक अंक > 4 को चार वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > एक अंक > 5 को पाँच वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > एक अंक > 6 को छह वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > एक अंक > 7 को सात वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > एक अंक > 8 को आठ वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > एक अंक > 9 को नौ वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > दो अंक > 10 को दस वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > दो अंक > 11 को ग्यारह वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > दो अंक > 12 को बारह वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > दो अंक > 21 को इक्कीस वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > दो अंक > 99 को नौंबे वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > तीन अंक > 100 को सौ वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > तीन अंक > 101 को सौ एक वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > तीन अंक > 111 को सौ ग्यारह वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > तीन अंक > 321 को तीन सौ इक्कीस वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > तीन अंक > 999 को नौ सौ उन्नासी वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > हजार > 1000 को एक हजार वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > हजार > 1001 को एक हजार एक वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > हजार > 2001 को दो हजार एक वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > हजार > 4321 को चार हजार तीन सौ इक्कीस वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > हजार > 9999 को नौ हजार नौ सौ उन्नासी वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > मिलियन > 1000000 को एक मिलियन वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > मिलियन > 2000001 को दो मिलियन एक वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > मिलियन > 1234567 को एक मिलियन एक लाख तेईस हजार पाँच सौ सत्तासी वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > मिलियन > 7654321 को सात मिलियन छह लाख चौवन्न हजार तीन सौ इक्कीस वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > मिलियन > 9999999 को नौ मिलियन नौ लाख नौ सौ नौंबे हजार नौ सौ नौंबे वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > बिलियन > 1000000000 को एक बिलियन वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > बिलियन > 2000000001 को दो बिलियन एक वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > बिलियन > 1234567890 को एक बिलियन बारह अरब पैंतालीस करोड़ चौवन्न लाख आठ हजार नौ सौ वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > बिलियन > 9876543210 को नौ बिलियन आठ सौ सत्तासी अरब पैंतालीस करोड़ तीन हजार दो सौ दस वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > बिलियन > 9999999999 को नौ बिलियन नौ सौ नौ अरब नौ सौ नौ करोड़ नौ सौ नौ लाख नौ सौ नौ हजार नौ सौ नौ वापस करना चाहिए
+
+src/lang/ar.test.ts:
+[0m[32m(pass)[0m Arabic > Single digits > 0 should return صفر [0.08ms]
+[0m[32m(pass)[0m Arabic > Single digits > 1 should return واحد [0.01ms]
+[0m[32m(pass)[0m Arabic > Single digits > 2 should return اثنان
+[0m[32m(pass)[0m Arabic > Single digits > 3 should return ثلاثة
+[0m[32m(pass)[0m Arabic > Single digits > 4 should return أربعة
+[0m[32m(pass)[0m Arabic > Single digits > 5 should return خمسة
+[0m[32m(pass)[0m Arabic > Single digits > 6 should return ستة [0.01ms]
+[0m[32m(pass)[0m Arabic > Single digits > 7 should return سبعة
+[0m[32m(pass)[0m Arabic > Single digits > 8 should return ثمانية
+[0m[32m(pass)[0m Arabic > Single digits > 9 should return تسعة [0.01ms]
+[0m[32m(pass)[0m Arabic > Double digits > 10 should return عشرة [0.01ms]
+[0m[32m(pass)[0m Arabic > Double digits > 11 should return إحدى عشرة
+[0m[32m(pass)[0m Arabic > Double digits > 12 should return اثنا عشرة
+[0m[32m(pass)[0m Arabic > Double digits > 21 should return واحد وعشرون [0.05ms]
+[0m[32m(pass)[0m Arabic > Double digits > 99 should return تسعة وتسعون
+[0m[35m(todo)[0m Arabic > Triple digits > 100 should return مائة
+[0m[35m(todo)[0m Arabic > Triple digits > 101 should return مائة وواحد
+[0m[35m(todo)[0m Arabic > Triple digits > 111 should return مائة وأحد عشر
+[0m[35m(todo)[0m Arabic > Triple digits > 321 should return ثلاثة مائة وواحد وعشرون
+[0m[35m(todo)[0m Arabic > Triple digits > 999 should return تسعة مائة وتسعة وتسعون
+[0m[35m(todo)[0m Arabic > Thousands > 1000 should return ألف
+[0m[35m(todo)[0m Arabic > Thousands > 1001 should return ألف وواحد
+[0m[35m(todo)[0m Arabic > Thousands > 2001 should return ألفان وواحد
+[0m[35m(todo)[0m Arabic > Thousands > 4321 should return أربعة آلاف وثلاثمائة وواحد وعشرون
+[0m[35m(todo)[0m Arabic > Thousands > 9999 should return تسعة آلاف وتسعة وتسعون
+[0m[35m(todo)[0m Arabic > Millions > 1000000 should return مليون
+[0m[35m(todo)[0m Arabic > Millions > 2000001 should return مليونان وواحد
+[0m[35m(todo)[0m Arabic > Millions > 1234567 should return مليون ومائتا ثلاث وأربعون ألف وخمسمائة وسبع وستون
+[0m[35m(todo)[0m Arabic > Millions > 7654321 should return سبعة ملايين وستمائة وأربعة وخمسون ألف وثلاث مائة وواحد وعشرون
+[0m[35m(todo)[0m Arabic > Millions > 9999999 should return تسعة ملايين وتسعمائة وتسعة وتسعون ألف وتسعمائة وتسعة وتسعون
+[0m[35m(todo)[0m Arabic > Billions > 1000000000 should return مليار
+[0m[35m(todo)[0m Arabic > Billions > 2000000001 should return ملياران وواحد
+[0m[35m(todo)[0m Arabic > Billions > 1234567890 should return مليار ومائتا ثلاث وأربعون مليون وخمسمائة وستة وسبعون ألف وثمانمائة وتسعون
+[0m[35m(todo)[0m Arabic > Billions > 9876543210 should return تسعة مليارات وثمانمائة وستة وسبعون مليون وخمسمائة وأربعة وثلاثون ألف ومائتين وعشرون
+[0m[35m(todo)[0m Arabic > Billions > 9999999999 should return تسعة مليارات وتسعمائة وتسعة وتسعون مليون وتسعمائة وتسعة وتسعون ألف وتسعمائة وتسعة وتسعون
+[0m[35m(todo)[0m Arabic > Trillions > 1000000000000 should return تريليون
+[0m[35m(todo)[0m Arabic > Trillions > 2000000000001 should return تريليونان وواحد
+[0m[35m(todo)[0m Arabic > Trillions > 1234567890123 should return تريليون ومائتان وثلاثة وأربعون بليون وخمسمائة وستة وسبعون مليون وثمانمائة وتسعون ألف ومائتين وثلاثة وعشرون
+[0m[35m(todo)[0m Arabic > Trillions > 9876543210987 should return تسعة تريليونات وثمانمائة وستة وسبعون بليون وخمسمائة وثلاثة وأربعون مليون وثلاثمائة وعشرون ألف وتسعمائة وسبعة وثمانون
+[0m[35m(todo)[0m Arabic > Trillions > 9999999999999 should return تسعة تريليونات وتسعمائة وتسعة وتسعون بليون وتسعمائة وتسعة وتسعون مليار وتسعمائة وتسعة وتسعون مليون وتسعمائة وتسعة وتسعون ألف وتسعمائة وتسعة وتسعون
+
+src/lang/es.test.ts:
+[0m[35m(todo)[0m Español > Dígitos individuales > 0 debería devolver cero
+[0m[35m(todo)[0m Español > Dígitos individuales > 1 debería devolver uno
+[0m[35m(todo)[0m Español > Dígitos individuales > 2 debería devolver dos
+[0m[35m(todo)[0m Español > Dígitos individuales > 3 debería devolver tres
+[0m[35m(todo)[0m Español > Dígitos individuales > 4 debería devolver cuatro
+[0m[35m(todo)[0m Español > Dígitos individuales > 5 debería devolver cinco
+[0m[35m(todo)[0m Español > Dígitos individuales > 6 debería devolver seis
+[0m[35m(todo)[0m Español > Dígitos individuales > 7 debería devolver siete
+[0m[35m(todo)[0m Español > Dígitos individuales > 8 debería devolver ocho
+[0m[35m(todo)[0m Español > Dígitos individuales > 9 debería devolver nueve
+[0m[35m(todo)[0m Español > Doble dígito > 10 debería devolver diez
+[0m[35m(todo)[0m Español > Doble dígito > 11 debería devolver once
+[0m[35m(todo)[0m Español > Doble dígito > 12 debería devolver doce
+[0m[35m(todo)[0m Español > Doble dígito > 21 debería devolver veintiuno
+[0m[35m(todo)[0m Español > Doble dígito > 99 debería devolver noventa y nueve
+[0m[35m(todo)[0m Español > Triple dígito > 100 debería devolver cien
+[0m[35m(todo)[0m Español > Triple dígito > 101 debería devolver ciento uno
+[0m[35m(todo)[0m Español > Triple dígito > 111 debería devolver ciento once
+[0m[35m(todo)[0m Español > Triple dígito > 321 debería devolver trescientos veintiuno
+[0m[35m(todo)[0m Español > Triple dígito > 999 debería devolver novecientos noventa y nueve
+[0m[35m(todo)[0m Español > Miles > 1000 debería devolver mil
+[0m[35m(todo)[0m Español > Miles > 1001 debería devolver mil uno
+[0m[35m(todo)[0m Español > Miles > 2001 debería devolver dos mil uno
+[0m[35m(todo)[0m Español > Miles > 4321 debería devolver cuatro mil trescientos veintiuno
+[0m[35m(todo)[0m Español > Miles > 9999 debería devolver nueve mil novecientos noventa y nueve
+[0m[35m(todo)[0m Español > Millones > 1000000 debería devolver un millón
+[0m[35m(todo)[0m Español > Millones > 2000001 debería devolver dos millones uno
+[0m[35m(todo)[0m Español > Millones > 1234567 debería devolver un millón doscientos treinta y cuatro mil quinientos sesenta y siete
+[0m[35m(todo)[0m Español > Millones > 7654321 debería devolver siete millones seiscientos cincuenta y cuatro mil trescientos veintiuno
+[0m[35m(todo)[0m Español > Millones > 9999999 debería devolver nueve millones novecientos noventa y nueve mil novecientos noventa y nueve
+[0m[35m(todo)[0m Español > Miles de millones > 1000000000 debería devolver mil millones
+[0m[35m(todo)[0m Español > Miles de millones > 2000000001 debería devolver dos mil millones uno
+[0m[35m(todo)[0m Español > Miles de millones > 1234567890 debería devolver mil doscientos treinta y cuatro millones quinientos sesenta y siete mil ochocientos noventa
+[0m[35m(todo)[0m Español > Miles de millones > 9876543210 debería devolver nueve mil ochocientos setenta y seis millones quinientos cuarenta y tres mil doscientos diez
+[0m[35m(todo)[0m Español > Miles de millones > 9999999999 debería devolver nueve mil novecientos noventa y nueve millones novecientos noventa y nueve mil novecientos noventa y nueve
+[0m[35m(todo)[0m Español > Billones > 1000000000000 debería devolver un billón
+[0m[35m(todo)[0m Español > Billones > 2000000000001 debería devolver dos billones uno
+[0m[35m(todo)[0m Español > Billones > 1234567890123 debería devolver un billón doscientos treinta y cuatro mil quinientos sesenta y siete billones ochocientos noventa mil ciento veintitrés
+[0m[35m(todo)[0m Español > Billones > 9876543210987 debería devolver nueve billones ochocientos setenta y seis mil quinientos cuarenta y tres billones doscientos diez mil novecientos ochenta y siete
+[0m[35m(todo)[0m Español > Billones > 9999999999999 debería devolver nueve billones novecientos noventa y nueve mil novecientos noventa y nueve billones novecientos noventa y nueve mil novecientos noventa y nueve
+
+src/lang/id.test.ts:
+[0m[32m(pass)[0m Indonesian > Single digits > 0 should return nol [0.06ms]
+[0m[32m(pass)[0m Indonesian > Single digits > 1 should return satu
+[0m[32m(pass)[0m Indonesian > Single digits > 2 should return dua
+[0m[32m(pass)[0m Indonesian > Single digits > 3 should return tiga
+[0m[32m(pass)[0m Indonesian > Single digits > 4 should return empat
+[0m[32m(pass)[0m Indonesian > Single digits > 5 should return lima
+[0m[32m(pass)[0m Indonesian > Single digits > 6 should return enam
+[0m[32m(pass)[0m Indonesian > Single digits > 7 should return tujuh
+[0m[32m(pass)[0m Indonesian > Single digits > 8 should return delapan
+[0m[32m(pass)[0m Indonesian > Single digits > 9 should return sembilan
+[0m[32m(pass)[0m Indonesian > Double digits > 10 should return sepuluh
+[0m[32m(pass)[0m Indonesian > Double digits > 11 should return sebelas
+[0m[32m(pass)[0m Indonesian > Double digits > 12 should return dua belas
+[0m[32m(pass)[0m Indonesian > Double digits > 21 should return dua puluh satu [0.01ms]
+[0m[32m(pass)[0m Indonesian > Double digits > 99 should return sembilan puluh sembilan
+[0m[32m(pass)[0m Indonesian > Triple digits > 100 should return seratus
+[0m[32m(pass)[0m Indonesian > Triple digits > 101 should return seratus satu
+[0m[32m(pass)[0m Indonesian > Triple digits > 111 should return seratus sebelas
+[0m[32m(pass)[0m Indonesian > Triple digits > 321 should return tiga ratus dua puluh satu [0.02ms]
+[0m[32m(pass)[0m Indonesian > Triple digits > 999 should return sembilan ratus sembilan puluh sembilan [0.01ms]
+[0m[32m(pass)[0m Indonesian > Thousands > 1000 should return seribu
+[0m[32m(pass)[0m Indonesian > Thousands > 1001 should return seribu satu
+[0m[32m(pass)[0m Indonesian > Thousands > 2001 should return dua ribu satu
+[0m[32m(pass)[0m Indonesian > Thousands > 4321 should return empat ribu tiga ratus dua puluh satu
+[0m[32m(pass)[0m Indonesian > Thousands > 9999 should return sembilan ribu sembilan ratus sembilan puluh sembilan
+[0m[32m(pass)[0m Indonesian > Millions > 1000000 should return satu juta [0.01ms]
+[0m[32m(pass)[0m Indonesian > Millions > 2000001 should return dua juta satu
+[0m[32m(pass)[0m Indonesian > Millions > 1234567 should return satu juta dua ratus tiga puluh empat ribu lima ratus enam puluh tujuh
+[0m[32m(pass)[0m Indonesian > Millions > 7654321 should return tujuh juta enam ratus lima puluh empat ribu tiga ratus dua puluh satu [0.02ms]
+[0m[32m(pass)[0m Indonesian > Millions > 9999999 should return sembilan juta sembilan ratus sembilan puluh sembilan ribu sembilan ratus sembilan puluh sembilan
+[0m[32m(pass)[0m Indonesian > Billions > 1000000000 should return satu miliar [0.01ms]
+[0m[32m(pass)[0m Indonesian > Billions > 2000000001 should return dua miliar satu
+[0m[32m(pass)[0m Indonesian > Billions > 1234567890 should return satu miliar dua ratus tiga puluh empat juta lima ratus enam puluh tujuh ribu delapan ratus sembilan puluh [0.01ms]
+[0m[32m(pass)[0m Indonesian > Billions > 9876543210 should return sembilan miliar delapan ratus tujuh puluh enam juta lima ratus empat puluh tiga ribu dua ratus sepuluh
+[0m[32m(pass)[0m Indonesian > Billions > 9999999999 should return sembilan miliar sembilan ratus sembilan puluh sembilan juta sembilan ratus sembilan puluh sembilan ribu sembilan ratus sembilan puluh sembilan
+[0m[32m(pass)[0m Indonesian > Trillions > 1000000000000 should return satu triliun
+[0m[32m(pass)[0m Indonesian > Trillions > 2000000000001 should return dua triliun satu
+[0m[32m(pass)[0m Indonesian > Trillions > 1234567890123 should return satu triliun dua ratus tiga puluh empat miliar lima ratus enam puluh tujuh juta delapan ratus sembilan puluh ribu seratus dua puluh tiga [0.01ms]
+[0m[32m(pass)[0m Indonesian > Trillions > 9876543210987 should return sembilan triliun delapan ratus tujuh puluh enam miliar lima ratus empat puluh tiga juta dua ratus sepuluh ribu sembilan ratus delapan puluh tujuh
+[0m[32m(pass)[0m Indonesian > Trillions > 9999999999999 should return sembilan triliun sembilan ratus sembilan puluh sembilan miliar sembilan ratus sembilan puluh sembilan juta sembilan ratus sembilan puluh sembilan ribu sembilan ratus sembilan puluh sembilan [0.02ms]
+
+src/lang/en.test.ts:
+[0m[32m(pass)[0m English > Single digits > 0 should return zero [0.06ms]
+[0m[32m(pass)[0m English > Single digits > 1 should return one
+[0m[32m(pass)[0m English > Single digits > 2 should return two
+[0m[32m(pass)[0m English > Single digits > 3 should return three
+[0m[32m(pass)[0m English > Single digits > 4 should return four
+[0m[32m(pass)[0m English > Single digits > 5 should return five
+[0m[32m(pass)[0m English > Single digits > 6 should return six
+[0m[32m(pass)[0m English > Single digits > 7 should return seven
+[0m[32m(pass)[0m English > Single digits > 8 should return eight
+[0m[32m(pass)[0m English > Single digits > 9 should return nine
+[0m[32m(pass)[0m English > Double digits > 10 should return ten
+[0m[32m(pass)[0m English > Double digits > 11 should return eleven [0.01ms]
+[0m[32m(pass)[0m English > Double digits > 12 should return twelve
+[0m[32m(pass)[0m English > Double digits > 21 should return twenty one
+[0m[32m(pass)[0m English > Double digits > 99 should return ninety nine
+[0m[32m(pass)[0m English > Triple digits > 100 should return one hundred
+[0m[32m(pass)[0m English > Triple digits > 101 should return one hundred one
+[0m[32m(pass)[0m English > Triple digits > 111 should return one hundred eleven
+[0m[32m(pass)[0m English > Triple digits > 321 should return three hundred twenty one [0.02ms]
+[0m[32m(pass)[0m English > Triple digits > 999 should return nine hundred ninety nine
+[0m[32m(pass)[0m English > Thousands > 1000 should return one thousand
+[0m[32m(pass)[0m English > Thousands > 1001 should return one thousand one
+[0m[32m(pass)[0m English > Thousands > 2001 should return two thousand one
+[0m[32m(pass)[0m English > Thousands > 4321 should return four thousand three hundred twenty one [0.05ms]
+[0m[32m(pass)[0m English > Thousands > 9999 should return nine thousand nine hundred ninety nine [0.02ms]
+[0m[32m(pass)[0m English > Millions > 1000000 should return one million [0.01ms]
+[0m[32m(pass)[0m English > Millions > 2000001 should return two million one
+[0m[32m(pass)[0m English > Millions > 1234567 should return one million two hundred thirty four thousand five hundred sixty seven [0.02ms]
+[0m[32m(pass)[0m English > Millions > 7654321 should return seven million six hundred fifty four thousand three hundred twenty one
+[0m[32m(pass)[0m English > Millions > 9999999 should return nine million nine hundred ninety nine thousand nine hundred ninety nine
+[0m[32m(pass)[0m English > Billions > 1000000000 should return one billion
+[0m[32m(pass)[0m English > Billions > 2000000001 should return two billion one
+[0m[32m(pass)[0m English > Billions > 1234567890 should return one billion two hundred thirty four million five hundred sixty seven thousand eight hundred ninety
+[0m[32m(pass)[0m English > Billions > 9876543210 should return nine billion eight hundred seventy six million five hundred forty three thousand two hundred ten
+[0m[32m(pass)[0m English > Billions > 9999999999 should return nine billion nine hundred ninety nine million nine hundred ninety nine thousand nine hundred ninety nine
+[0m[32m(pass)[0m English > Trillions > 1000000000000 should return one trillion
+[0m[32m(pass)[0m English > Trillions > 2000000000001 should return two trillion one
+[0m[32m(pass)[0m English > Trillions > 1234567890123 should return one trillion two hundred thirty four billion five hundred sixty seven million eight hundred ninety thousand one hundred twenty three
+[0m[32m(pass)[0m English > Trillions > 9876543210987 should return nine trillion eight hundred seventy six billion five hundred forty three million two hundred ten thousand nine hundred eighty seven
+[0m[32m(pass)[0m English > Trillions > 9999999999999 should return nine trillion nine hundred ninety nine billion nine hundred ninety nine million nine hundred ninety nine thousand nine hundred ninety nine [0.01ms]
+
+src/lang/ru.test.ts:
+[0m[35m(todo)[0m Russian > Single digits > 0 should return ноль
+[0m[35m(todo)[0m Russian > Single digits > 1 should return один
+[0m[35m(todo)[0m Russian > Single digits > 2 should return два
+[0m[35m(todo)[0m Russian > Single digits > 3 should return три
+[0m[35m(todo)[0m Russian > Single digits > 4 should return четыре
+[0m[35m(todo)[0m Russian > Single digits > 5 should return пять
+[0m[35m(todo)[0m Russian > Single digits > 6 should return шесть
+[0m[35m(todo)[0m Russian > Single digits > 7 should return семь
+[0m[35m(todo)[0m Russian > Single digits > 8 should return восемь
+[0m[35m(todo)[0m Russian > Single digits > 9 should return девять
+[0m[35m(todo)[0m Russian > Double digits > 10 should return десять
+[0m[35m(todo)[0m Russian > Double digits > 11 should return одиннадцать
+[0m[35m(todo)[0m Russian > Double digits > 12 should return двенадцать
+[0m[35m(todo)[0m Russian > Double digits > 21 should return двадцать один
+[0m[35m(todo)[0m Russian > Double digits > 99 should return девяносто девять
+[0m[35m(todo)[0m Russian > Triple digits > 100 should return сто
+[0m[35m(todo)[0m Russian > Triple digits > 101 should return сто один
+[0m[35m(todo)[0m Russian > Triple digits > 111 should return сто одиннадцать
+[0m[35m(todo)[0m Russian > Triple digits > 321 should return триста двадцать один
+[0m[35m(todo)[0m Russian > Triple digits > 999 should return девятьсот девяносто девять
+[0m[35m(todo)[0m Russian > Thousands > 1000 should return одна тысяча
+[0m[35m(todo)[0m Russian > Thousands > 1001 should return одна тысяча один
+[0m[35m(todo)[0m Russian > Thousands > 2001 should return две тысячи один
+[0m[35m(todo)[0m Russian > Thousands > 4321 should return четыре тысячи триста двадцать один
+[0m[35m(todo)[0m Russian > Thousands > 9999 should return девять тысяч девятьсот девяносто девять
+[0m[35m(todo)[0m Russian > Millions > 1000000 should return один миллион
+[0m[35m(todo)[0m Russian > Millions > 2000001 should return два миллиона один
+[0m[35m(todo)[0m Russian > Millions > 1234567 should return один миллион двести тридцать четыре тысячи пятьсот шестьдесят семь
+[0m[35m(todo)[0m Russian > Millions > 7654321 should return семь миллионов шестьсот пятьдесят четыре тысячи триста двадцать один
+[0m[35m(todo)[0m Russian > Millions > 9999999 should return девять миллионов девятьсот девяносто девять тысяч девятьсот девяносто девять
+[0m[35m(todo)[0m Russian > Billions > 1000000000 should return один миллиард
+[0m[35m(todo)[0m Russian > Billions > 2000000001 should return два миллиарда один
+[0m[35m(todo)[0m Russian > Billions > 1234567890 should return один миллиард двести тридцать четыре миллиона пятьсот шестьдесят семь тысяч восемьсот девяносто
+[0m[35m(todo)[0m Russian > Billions > 9876543210 should return девять миллиардов восемьсот семьдесят шесть миллионов пятьсот сорок три тысячи двести десять
+[0m[35m(todo)[0m Russian > Billions > 9999999999 should return девять миллиардов девятьсот девяносто девять миллионов девятьсот девяносто девять тысяч девятьсот девяносто девять
+[0m[35m(todo)[0m Russian > Trillions > 1000000000000 should return один триллион
+[0m[35m(todo)[0m Russian > Trillions > 2000000000001 should return два триллиона один
+[0m[35m(todo)[0m Russian > Trillions > 1234567890123 should return один триллион двести тридцать четыре миллиарда пятьсот шестьдесят семь миллионов восемьсот девяносто тысяч сто двадцать три
+[0m[35m(todo)[0m Russian > Trillions > 9876543210987 should return девять триллионов восемьсот семьдесят шесть миллиардов пятьсот сорок три миллиона двести десять тысяч девятьсот восемьдесят семь
+[0m[35m(todo)[0m Russian > Trillions > 9999999999999 should return девять триллионов девятьсот девяносто девять миллиардов девятьсот девяносто девять миллионов девятьсот девяносто девять тысяч девятьсот девяносто девять
+
+src/lang/bn.test.ts:
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > একক সংখ্যা > 0 দিয়ে শূন্য দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > একক সংখ্যা > 1 দিয়ে এক দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > একক সংখ্যা > 2 দিয়ে দুই দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > একক সংখ্যা > 3 দিয়ে তিন দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > একক সংখ্যা > 4 দিয়ে চার দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > একক সংখ্যা > 5 দিয়ে পাঁচ দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > একক সংখ্যা > 6 দিয়ে ছয় দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > একক সংখ্যা > 7 দিয়ে সাত দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > একক সংখ্যা > 8 দিয়ে আট দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > একক সংখ্যা > 9 দিয়ে নয় দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > দ্বিতীয় সংখ্যা > 10 দিয়ে দশ দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > দ্বিতীয় সংখ্যা > 11 দিয়ে এগারো দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > দ্বিতীয় সংখ্যা > 12 দিয়ে বারো দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > দ্বিতীয় সংখ্যা > 21 দিয়ে একুশ দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > দ্বিতীয় সংখ্যা > 99 দিয়ে নিরাশি দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > ত্রয়ীক সংখ্যা > 100 দিয়ে একশো দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > ত্রয়ীক সংখ্যা > 101 দিয়ে একশো এক দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > ত্রয়ীক সংখ্যা > 111 দিয়ে একশো এগারো দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > ত্রয়ীক সংখ্যা > 321 দিয়ে তিনশো একুশ দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > ত্রয়ীক সংখ্যা > 999 দিয়ে নয়শো নিরাশি দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > হাজার > 1000 দিয়ে এক হাজার দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > হাজার > 1001 দিয়ে এক হাজার এক দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > হাজার > 2001 দিয়ে দুই হাজার এক দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > হাজার > 4321 দিয়ে চার হাজার তিনশো একুশ দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > হাজার > 9999 দিয়ে নয় হাজার নয়শো নিরাশি দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > মিলিয়ন > 1000000 দিয়ে এক মিলিয়ন দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > মিলিয়ন > 2000001 দিয়ে দুই মিলিয়ন এক দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > মিলিয়ন > 1234567 দিয়ে এক মিলিয়ন তিনশো চুরাশি হাজার পাঁচ শো ছয় দশ দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > মিলিয়ন > 7654321 দিয়ে সাত মিলিয়ন ছয় শো চুরাশি হাজার চার শো একুশ দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > মিলিয়ন > 9999999 দিয়ে নয় মিলিয়ন নয়শো নিরাশি হাজার নয়শো নিরাশি দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > বিলিয়ন > 1000000000 দিয়ে এক বিলিয়ন দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > বিলিয়ন > 2000000001 দিয়ে দুই বিলিয়ন এক দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > বিলিয়ন > 1234567890 দিয়ে এক বিলিয়ন তিনশো চুরাশি মিলিয়ন পাঁচ শো ছয় দশ হাজার আট শো নিরাশি দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > বিলিয়ন > 9876543210 দিয়ে নয় বিলিয়ন আট শো সাত ছয় মিলিয়ন চুরাশি হাজার তিনশো দুই দশ দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > বিলিয়ন > 9999999999 দিয়ে নয় বিলিয়ন নয়শো নিরাশি মিলিয়ন নয়শো নিরাশি হাজার নয়শো নিরাশি দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > ট্রিলিয়ন > 1000000000000 দিয়ে এক ট্রিলিয়ন দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > ট্রিলিয়ন > 2000000000001 দিয়ে দুই ট্রিলিয়ন এক দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > ট্রিলিয়ন > 1234567890123 দিয়ে এক ট্রিলিয়ন তিনশো চুরাশি বিলিয়ন পাঁচ শো ছয় দশ মিলিয়ন আট শো নিরাশি হাজার দুই শো তিন দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > ট্রিলিয়ন > 9876543210987 দিয়ে নয় ট্রিলিয়ন আট শো সাত ছয় বিলিয়ন চুরাশি হাজার তিনশো দুই দশ কোটি আট শো সাত দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > ট্রিলিয়ন > 9999999999999 দিয়ে নয় ট্রিলিয়ন নয়শো নিরাশি বিলিয়ন নয়শো নিরাশি মিলিয়ন নয়শো নিরাশি হাজার নয়শো নিরাশি কোটি নয়শো নিরাশি দেয়
+
+src/lang/sw.test.ts:
+[0m[35m(todo)[0m Kiswahili > Namba moja > 0 inapaswa kurudisha sifuri
+[0m[35m(todo)[0m Kiswahili > Namba moja > 1 inapaswa kurudisha moja
+[0m[35m(todo)[0m Kiswahili > Namba moja > 2 inapaswa kurudisha mbili
+[0m[35m(todo)[0m Kiswahili > Namba moja > 3 inapaswa kurudisha tatu
+[0m[35m(todo)[0m Kiswahili > Namba moja > 4 inapaswa kurudisha nne
+[0m[35m(todo)[0m Kiswahili > Namba moja > 5 inapaswa kurudisha tano
+[0m[35m(todo)[0m Kiswahili > Namba moja > 6 inapaswa kurudisha sita
+[0m[35m(todo)[0m Kiswahili > Namba moja > 7 inapaswa kurudisha saba
+[0m[35m(todo)[0m Kiswahili > Namba moja > 8 inapaswa kurudisha nane
+[0m[35m(todo)[0m Kiswahili > Namba moja > 9 inapaswa kurudisha tisa
+[0m[35m(todo)[0m Kiswahili > Namba mbili > 10 inapaswa kurudisha kumi
+[0m[35m(todo)[0m Kiswahili > Namba mbili > 11 inapaswa kurudisha kumi na moja
+[0m[35m(todo)[0m Kiswahili > Namba mbili > 12 inapaswa kurudisha kumi na mbili
+[0m[35m(todo)[0m Kiswahili > Namba mbili > 21 inapaswa kurudisha ishirini na moja
+[0m[35m(todo)[0m Kiswahili > Namba mbili > 99 inapaswa kurudisha tisini na tisa
+[0m[35m(todo)[0m Kiswahili > Namba tatu > 100 inapaswa kurudisha mia moja
+[0m[35m(todo)[0m Kiswahili > Namba tatu > 101 inapaswa kurudisha mia moja na moja
+[0m[35m(todo)[0m Kiswahili > Namba tatu > 111 inapaswa kurudisha mia moja na kumi na moja
+[0m[35m(todo)[0m Kiswahili > Namba tatu > 321 inapaswa kurudisha mia tatu na ishirini na moja
+[0m[35m(todo)[0m Kiswahili > Namba tatu > 999 inapaswa kurudisha mia tisa na tisini na tisa
+[0m[35m(todo)[0m Kiswahili > Elfu > 1000 inapaswa kurudisha elfu moja
+[0m[35m(todo)[0m Kiswahili > Elfu > 1001 inapaswa kurudisha elfu moja na moja
+[0m[35m(todo)[0m Kiswahili > Elfu > 2001 inapaswa kurudisha elfu mbili na moja
+[0m[35m(todo)[0m Kiswahili > Elfu > 4321 inapaswa kurudisha elfu nne na mia tatu ishirini na moja
+[0m[35m(todo)[0m Kiswahili > Elfu > 9999 inapaswa kurudisha elfu tisa na mia tisini na tisa
+[0m[35m(todo)[0m Kiswahili > Milioni > 1000000 inapaswa kurudisha milioni moja
+[0m[35m(todo)[0m Kiswahili > Milioni > 2000001 inapaswa kurudisha milioni mbili na moja
+[0m[35m(todo)[0m Kiswahili > Milioni > 1234567 inapaswa kurudisha milioni moja na mia mbili thelathini na nne elfu mia tano mia sitini na saba
+[0m[35m(todo)[0m Kiswahili > Milioni > 7654321 inapaswa kurudisha milioni saba na mia sita thelathini na nne elfu mia tatu mia ishirini na moja
+[0m[35m(todo)[0m Kiswahili > Milioni > 9999999 inapaswa kurudisha milioni tisa na mia tisa tisini na tisa elfu tisa na mia tisini na tisa
+[0m[35m(todo)[0m Kiswahili > Bilioni > 1000000000 inapaswa kurudisha bilioni moja
+[0m[35m(todo)[0m Kiswahili > Bilioni > 2000000001 inapaswa kurudisha bilioni mbili na moja
+[0m[35m(todo)[0m Kiswahili > Bilioni > 1234567890 inapaswa kurudisha bilioni moja na mia mbili thelathini na nne milioni mia tano mia sitini na saba elfu mia nane mia tisini
+[0m[35m(todo)[0m Kiswahili > Bilioni > 9876543210 inapaswa kurudisha bilioni tisa na mia nane thelathini na saba milioni mia sita mia tano mia arobaini na tatu elfu mia mbili mia kumi
+[0m[35m(todo)[0m Kiswahili > Bilioni > 9999999999 inapaswa kurudisha bilioni tisa na mia tisa tisini na tisa milioni tisa na mia tisini na tisa elfu tisa na mia tisini na tisa
+[0m[35m(todo)[0m Kiswahili > Trilioni > 1000000000000 inapaswa kurudisha trilioni moja
+[0m[35m(todo)[0m Kiswahili > Trilioni > 2000000000001 inapaswa kurudisha trilioni mbili na moja
+[0m[35m(todo)[0m Kiswahili > Trilioni > 1234567890123 inapaswa kurudisha trilioni moja na mia mbili thelathini na nne bilioni mia tano mia sitini na saba milioni mia nane mia tisini elfu mia moja mia ishirini na tatu
+[0m[35m(todo)[0m Kiswahili > Trilioni > 9876543210987 inapaswa kurudisha trilioni tisa na mia nane thelathini na saba bilioni mia sita mia tano mia arobaini na tatu milioni mia mbili mia kumi elfu mia tisa mia themanini na saba
+[0m[35m(todo)[0m Kiswahili > Trilioni > 9999999999999 inapaswa kurudisha trilioni tisa na mia tisa tisini na tisa bilioni tisa na mia tisini na tisa milioni tisa na mia tisini na tisa elfu tisa na mia tisini na tisa
+
+src/lang/de.test.ts:
+[0m[35m(todo)[0m German > Einzeldigit > 0 sollte null zurückgeben
+[0m[35m(todo)[0m German > Einzeldigit > 1 sollte eins zurückgeben
+[0m[35m(todo)[0m German > Einzeldigit > 2 sollte zwei zurückgeben
+[0m[35m(todo)[0m German > Einzeldigit > 3 sollte drei zurückgeben
+[0m[35m(todo)[0m German > Einzeldigit > 4 sollte vier zurückgeben
+[0m[35m(todo)[0m German > Einzeldigit > 5 sollte fünf zurückgeben
+[0m[35m(todo)[0m German > Einzeldigit > 6 sollte sechs zurückgeben
+[0m[35m(todo)[0m German > Einzeldigit > 7 sollte sieben zurückgeben
+[0m[35m(todo)[0m German > Einzeldigit > 8 sollte acht zurückgeben
+[0m[35m(todo)[0m German > Einzeldigit > 9 sollte neun zurückgeben
+[0m[35m(todo)[0m German > Zweistellige Zahlen > 10 sollte zehn zurückgeben
+[0m[35m(todo)[0m German > Zweistellige Zahlen > 11 sollte elf zurückgeben
+[0m[35m(todo)[0m German > Zweistellige Zahlen > 12 sollte zwölf zurückgeben
+[0m[35m(todo)[0m German > Zweistellige Zahlen > 21 sollte einundzwanzig zurückgeben
+[0m[35m(todo)[0m German > Zweistellige Zahlen > 99 sollte neunundneunzig zurückgeben
+[0m[35m(todo)[0m German > Dreistellige Zahlen > 100 sollte einhundert zurückgeben
+[0m[35m(todo)[0m German > Dreistellige Zahlen > 101 sollte einhunderteins zurückgeben
+[0m[35m(todo)[0m German > Dreistellige Zahlen > 111 sollte einhundertelf zurückgeben
+[0m[35m(todo)[0m German > Dreistellige Zahlen > 321 sollte dreihunderteinundzwanzig zurückgeben
+[0m[35m(todo)[0m German > Dreistellige Zahlen > 999 sollte neunhundertneunundneunzig zurückgeben
+[0m[35m(todo)[0m German > Tausender > 1000 sollte eintausend zurückgeben
+[0m[35m(todo)[0m German > Tausender > 1001 sollte eintausendeins zurückgeben
+[0m[35m(todo)[0m German > Tausender > 2001 sollte zweitausendeins zurückgeben
+[0m[35m(todo)[0m German > Tausender > 4321 sollte viertausenddreihunderteinundzwanzig zurückgeben
+[0m[35m(todo)[0m German > Tausender > 9999 sollte neuntausendneunhundertneunundneunzig zurückgeben
+[0m[35m(todo)[0m German > Millionen > 1000000 sollte eine Million zurückgeben
+[0m[35m(todo)[0m German > Millionen > 2000001 sollte zwei Millionen eins zurückgeben
+[0m[35m(todo)[0m German > Millionen > 1234567 sollte eine Million zweihundertdreiundvierzigtausendfünfhundertsiebenundsechzig zurückgeben
+[0m[35m(todo)[0m German > Millionen > 7654321 sollte sieben Millionen sechshundertvierundfünfzigtausenddreihunderteinundzwanzig zurückgeben
+[0m[35m(todo)[0m German > Millionen > 9999999 sollte neun Millionen neunhundertneunundneunzigtausendneunhundertneunundneunzig zurückgeben
+[0m[35m(todo)[0m German > Milliarden > 1000000000 sollte eine Milliarde zurückgeben
+[0m[35m(todo)[0m German > Milliarden > 2000000001 sollte zwei Milliarden eins zurückgeben
+[0m[35m(todo)[0m German > Milliarden > 1234567890 sollte eine Milliarde zweihundertdreiundvierzig Millionen fünfhundertsechsundachtzigtausendneunhundertneunzig zurückgeben
+[0m[35m(todo)[0m German > Milliarden > 9876543210 sollte neun Milliarden achthundertsiebenundsechzig Millionen fünfhundertvierundfünfzigtausendzweihundertzehn zurückgeben
+[0m[35m(todo)[0m German > Milliarden > 9999999999 sollte neun Milliarden neunhundertneunundneunzig Millionen neunhundertneunundneunzigtausendneunhundertneunundneunzig zurückgeben
+[0m[35m(todo)[0m German > Billionen > 1000000000000 sollte eine Billion zurückgeben
+[0m[35m(todo)[0m German > Billionen > 2000000000001 sollte zwei Billionen eins zurückgeben
+[0m[35m(todo)[0m German > Billionen > 1234567890123 sollte eine Billion zweihundertdreiundvierzig Milliarden fünfhundertsechsundachtzig Millionen neuntausendneunhundertdreiundzwanzig zurückgeben
+[0m[35m(todo)[0m German > Billionen > 9876543210987 sollte neun Billionen achthundertsiebenundsechzig Milliarden fünfhundertvierundfünfzig Millionen dreihundertzehntausendneunhundertachtundsiebzig zurückgeben
+[0m[35m(todo)[0m German > Billionen > 9999999999999 sollte neun Billionen neunhundertneunundneunzig Milliarden neunhundertneunundneunzig Millionen neuntausendneunhundertneunundneunzig zurückgeben
+
+src/lang/ja.test.ts:
+[0m[35m(todo)[0m 日本語 > 単一の数字 > 0 は ゼロ を返すべき
+[0m[35m(todo)[0m 日本語 > 単一の数字 > 1 は 一 を返すべき
+[0m[35m(todo)[0m 日本語 > 単一の数字 > 2 は 二 を返すべき
+[0m[35m(todo)[0m 日本語 > 単一の数字 > 3 は 三 を返すべき
+[0m[35m(todo)[0m 日本語 > 単一の数字 > 4 は 四 を返すべき
+[0m[35m(todo)[0m 日本語 > 単一の数字 > 5 は 五 を返すべき
+[0m[35m(todo)[0m 日本語 > 単一の数字 > 6 は 六 を返すべき
+[0m[35m(todo)[0m 日本語 > 単一の数字 > 7 は 七 を返すべき
+[0m[35m(todo)[0m 日本語 > 単一の数字 > 8 は 八 を返すべき
+[0m[35m(todo)[0m 日本語 > 単一の数字 > 9 は 九 を返すべき
+[0m[35m(todo)[0m 日本語 > 2桁の数字 > 10 は 十 を返すべき
+[0m[35m(todo)[0m 日本語 > 2桁の数字 > 11 は 十一 を返すべき
+[0m[35m(todo)[0m 日本語 > 2桁の数字 > 12 は 十二 を返すべき
+[0m[35m(todo)[0m 日本語 > 2桁の数字 > 21 は 二十一 を返すべき
+[0m[35m(todo)[0m 日本語 > 2桁の数字 > 99 は 九十九 を返すべき
+[0m[35m(todo)[0m 日本語 > 3桁の数字 > 100 は 百 を返すべき
+[0m[35m(todo)[0m 日本語 > 3桁の数字 > 101 は 百一 を返すべき
+[0m[35m(todo)[0m 日本語 > 3桁の数字 > 111 は 百十一 を返すべき
+[0m[35m(todo)[0m 日本語 > 3桁の数字 > 321 は 三百二十一 を返すべき
+[0m[35m(todo)[0m 日本語 > 3桁の数字 > 999 は 九百九十九 を返すべき
+[0m[35m(todo)[0m 日本語 > 千 > 1000 は 千 を返すべき
+[0m[35m(todo)[0m 日本語 > 千 > 1001 は 千一 を返すべき
+[0m[35m(todo)[0m 日本語 > 千 > 2001 は 二千一 を返すべき
+[0m[35m(todo)[0m 日本語 > 千 > 4321 は 四千三百二十一 を返すべき
+[0m[35m(todo)[0m 日本語 > 千 > 9999 は 九千九百九十九 を返すべき
+[0m[35m(todo)[0m 日本語 > 百万 > 1000000 は 百万 を返すべき
+[0m[35m(todo)[0m 日本語 > 百万 > 2000001 は 二百万一 を返すべき
+[0m[35m(todo)[0m 日本語 > 百万 > 1234567 は 百二十三万四千五百六十七 を返すべき
+[0m[35m(todo)[0m 日本語 > 百万 > 7654321 は 七百六十五万四千三百二十一 を返すべき
+[0m[35m(todo)[0m 日本語 > 百万 > 9999999 は 九百九十九万九千九百九十九 を返すべき
+[0m[35m(todo)[0m 日本語 > 十億 > 1000000000 は 十億 を返すべき
+[0m[35m(todo)[0m 日本語 > 十億 > 2000000001 は 二十億一 を返すべき
+[0m[35m(todo)[0m 日本語 > 十億 > 1234567890 は 百二十三億四千五百六十七万八千九百 を返すべき
+[0m[35m(todo)[0m 日本語 > 十億 > 9876543210 は 九十八億七千六百五十四万三千二百十 を返すべき
+[0m[35m(todo)[0m 日本語 > 十億 > 9999999999 は 九十九億九千九百九十九万九千九百九十九 を返すべき
+[0m[35m(todo)[0m 日本語 > 兆 > 1000000000000 は 兆 を返すべき
+[0m[35m(todo)[0m 日本語 > 兆 > 2000000000001 は 二兆一 を返すべき
+[0m[35m(todo)[0m 日本語 > 兆 > 1234567890123 は 千二百三十四兆五百六十七億八千九百十二万三百 を返すべき
+[0m[35m(todo)[0m 日本語 > 兆 > 9876543210987 は 九千八百七十六兆五千四百三十二億一千九百八十七万 を返すべき
+[0m[35m(todo)[0m 日本語 > 兆 > 9999999999999 は 九千九百九十九兆九千九百九十九億九千九百九十九万九千九百九十九 を返すべき
+
+465 tests todo:
+[0m[35m(todo)[0m Français > Chiffres simples > 0 devrait retourner zéro
+[0m[35m(todo)[0m Français > Chiffres simples > 1 devrait retourner un
+[0m[35m(todo)[0m Français > Chiffres simples > 2 devrait retourner deux
+[0m[35m(todo)[0m Français > Chiffres simples > 3 devrait retourner trois
+[0m[35m(todo)[0m Français > Chiffres simples > 4 devrait retourner quatre
+[0m[35m(todo)[0m Français > Chiffres simples > 5 devrait retourner cinq
+[0m[35m(todo)[0m Français > Chiffres simples > 6 devrait retourner six
+[0m[35m(todo)[0m Français > Chiffres simples > 7 devrait retourner sept
+[0m[35m(todo)[0m Français > Chiffres simples > 8 devrait retourner huit
+[0m[35m(todo)[0m Français > Chiffres simples > 9 devrait retourner neuf
+[0m[35m(todo)[0m Français > Chiffres doubles > 10 devrait retourner dix
+[0m[35m(todo)[0m Français > Chiffres doubles > 11 devrait retourner onze
+[0m[35m(todo)[0m Français > Chiffres doubles > 12 devrait retourner douze
+[0m[35m(todo)[0m Français > Chiffres doubles > 21 devrait retourner vingt et un
+[0m[35m(todo)[0m Français > Chiffres doubles > 99 devrait retourner quatre-vingt-dix-neuf
+[0m[35m(todo)[0m Français > Chiffres triples > 100 devrait retourner cent
+[0m[35m(todo)[0m Français > Chiffres triples > 101 devrait retourner cent un
+[0m[35m(todo)[0m Français > Chiffres triples > 111 devrait retourner cent onze
+[0m[35m(todo)[0m Français > Chiffres triples > 321 devrait retourner trois cent vingt et un
+[0m[35m(todo)[0m Français > Chiffres triples > 999 devrait retourner neuf cent quatre-vingt-dix-neuf
+[0m[35m(todo)[0m Français > Milliers > 1000 devrait retourner mille
+[0m[35m(todo)[0m Français > Milliers > 1001 devrait retourner mille un
+[0m[35m(todo)[0m Français > Milliers > 2001 devrait retourner deux mille un
+[0m[35m(todo)[0m Français > Milliers > 4321 devrait retourner quatre mille trois cent vingt et un
+[0m[35m(todo)[0m Français > Milliers > 9999 devrait retourner neuf mille neuf cent quatre-vingt-dix-neuf
+[0m[35m(todo)[0m Français > Millions > 1000000 devrait retourner un million
+[0m[35m(todo)[0m Français > Millions > 2000001 devrait retourner deux millions un
+[0m[35m(todo)[0m Français > Millions > 1234567 devrait retourner un million deux cent trente-quatre mille cinq cent soixante-sept
+[0m[35m(todo)[0m Français > Millions > 7654321 devrait retourner sept millions six cent cinquante-quatre mille trois cent vingt et un
+[0m[35m(todo)[0m Français > Millions > 9999999 devrait retourner neuf millions neuf cent quatre-vingt-dix-neuf mille neuf cent quatre-vingt-dix-neuf
+[0m[35m(todo)[0m Français > Milliards > 1000000000 devrait retourner un milliard
+[0m[35m(todo)[0m Français > Milliards > 2000000001 devrait retourner deux milliards un
+[0m[35m(todo)[0m Français > Milliards > 1234567890 devrait retourner un milliard deux cent trente-quatre millions cinq cent soixante-sept mille huit cent quatre-vingt-dix
+[0m[35m(todo)[0m Français > Milliards > 9876543210 devrait retourner neuf milliards huit cent soixante-seize millions cinq cent quarante-trois mille deux cent dix
+[0m[35m(todo)[0m Français > Milliards > 9999999999 devrait retourner neuf milliards neuf cent quatre-vingt-dix-neuf millions neuf cent quatre-vingt-dix-neuf mille neuf cent quatre-vingt-dix-neuf
+[0m[35m(todo)[0m Français > Billions > 1000000000000 devrait retourner un billion
+[0m[35m(todo)[0m Français > Billions > 2000000000001 devrait retourner deux billions un
+[0m[35m(todo)[0m Français > Billions > 1234567890123 devrait retourner un billion deux cent trente-quatre milliards cinq cent soixante-sept millions huit cent quatre-vingt-dix mille cent vingt-trois
+[0m[35m(todo)[0m Français > Billions > 9876543210987 devrait retourner neuf billions huit cent soixante-seize milliards cinq cent quarante-trois millions deux cent dix mille neuf cent quatre-vingt-sept
+[0m[35m(todo)[0m Français > Billions > 9999999999999 devrait retourner neuf billions neuf cent quatre-vingt-dix-neuf milliards neuf cent quatre-vingt-dix-neuf millions neuf cent quatre-vingt-dix-neuf mille neuf cent quatre-vingt-dix-neuf
+[0m[35m(todo)[0m मराठी > एक अंक > 0 ने शून्य परत करावे
+[0m[35m(todo)[0m मराठी > एक अंक > 1 ने एक परत करावे
+[0m[35m(todo)[0m मराठी > एक अंक > 2 ने दोन परत करावे
+[0m[35m(todo)[0m मराठी > एक अंक > 3 ने तीन परत करावे
+[0m[35m(todo)[0m मराठी > एक अंक > 4 ने चार परत करावे
+[0m[35m(todo)[0m मराठी > एक अंक > 5 ने पाच परत करावे
+[0m[35m(todo)[0m मराठी > एक अंक > 6 ने सहा परत करावे
+[0m[35m(todo)[0m मराठी > एक अंक > 7 ने सात परत करावे
+[0m[35m(todo)[0m मराठी > एक अंक > 8 ने आठ परत करावे
+[0m[35m(todo)[0m मराठी > एक अंक > 9 ने नऊ परत करावे
+[0m[35m(todo)[0m मराठी > दोन अंक > 10 ने दहा परत करावे
+[0m[35m(todo)[0m मराठी > दोन अंक > 11 ने अकरा परत करावे
+[0m[35m(todo)[0m मराठी > दोन अंक > 12 ने बारा परत करावे
+[0m[35m(todo)[0m मराठी > दोन अंक > 21 ने एकवीस परत करावे
+[0m[35m(todo)[0m मराठी > दोन अंक > 99 ने नव्व्याण्णव परत करावे
+[0m[35m(todo)[0m मराठी > तीन अंक > 100 ने शंभर परत करावे
+[0m[35m(todo)[0m मराठी > तीन अंक > 101 ने शंभर एक परत करावे
+[0m[35m(todo)[0m मराठी > तीन अंक > 111 ने शंभर अकरा परत करावे
+[0m[35m(todo)[0m मराठी > तीन अंक > 321 ने तीनशे सहावे परत करावे
+[0m[35m(todo)[0m मराठी > तीन अंक > 999 ने नऊशे नव्व्याण्णव परत करावे
+[0m[35m(todo)[0m मराठी > हजार > 1000 ने हजार परत करावे
+[0m[35m(todo)[0m मराठी > हजार > 1001 ने हजार एक परत करावे
+[0m[35m(todo)[0m मराठी > हजार > 2001 ने दोन हजार एक परत करावे
+[0m[35m(todo)[0m मराठी > हजार > 4321 ने चार हजार तीनशे एकराण्यात परत करावे
+[0m[35m(todo)[0m मराठी > हजार > 9999 ने नऊ हजार नऊशे नव्व्याण्णव परत करावे
+[0m[35m(todo)[0m मराठी > लाख > 1000000 ने दहा लाख परत करावे
+[0m[35m(todo)[0m मराठी > लाख > 2000001 ने दोन लाख एक परत करावे
+[0m[35m(todo)[0m मराठी > लाख > 1234567 ने बारा लाख तीन शंभर चोवीस हजार पाचशे सत्त्याण्णव परत करावे
+[0m[35m(todo)[0m मराठी > लाख > 7654321 ने सहा लाख पाचशे पाचवीस हजार चोवीस हजार तीनशे एकराण्यात परत करावे
+[0m[35m(todo)[0m मराठी > लाख > 9999999 ने नऊ लाख नऊशे नव्व्याण्णव हजार नऊशे नव्व्याण्णव परत करावे
+[0m[35m(todo)[0m मराठी > कोटी > 10000000 ने दहा कोटी परत करावे
+[0m[35m(todo)[0m मराठी > कोटी > 20000001 ने दोन कोटी एक परत करावे
+[0m[35m(todo)[0m मराठी > कोटी > 1234567890 ने बारा कोटी चौवन्न हजार चोवीस लाख सत्त्याण्णव हजार आठशे नव्व्याण्णव परत करावे
+[0m[35m(todo)[0m मराठी > कोटी > 9876543210 ने नऊ कोटी आठशे सत्त्याण्णव हजार चौवन्न लाख तीन लाख दोन हजार दहा परत करावे
+[0m[35m(todo)[0m मराठी > कोटी > 9999999999 ने नऊ कोटी नऊशे नव्व्याण्णव हजार नऊशे नव्व्याण्णव हजार नऊशे नव्व्याण्णव परत करावे
+[0m[35m(todo)[0m Mandarin Chinese > Billions > 1000000000000 should return 一万亿
+[0m[35m(todo)[0m Mandarin Chinese > Billions > 2000000000001 should return 二万亿一
+[0m[35m(todo)[0m Mandarin Chinese > Billions > 1234567890123 should return 一万亿二十三百四十亿五六千七百八万九千一百二十三
+[0m[35m(todo)[0m Mandarin Chinese > Billions > 9876543210987 should return 九万亿八千七百六十亿五亿四千二百一万九百八十七
+[0m[35m(todo)[0m Mandarin Chinese > Billions > 9999999999999 should return 九万亿九百九十九亿九百九十九百九十九万九千九百九十九
+[0m[35m(todo)[0m Mandarin Chinese > Trillions > 1000000000000 should return 一万亿
+[0m[35m(todo)[0m Mandarin Chinese > Trillions > 2000000000001 should return 二万亿一
+[0m[35m(todo)[0m Mandarin Chinese > Trillions > 1234567890123 should return 一万亿二十三百四十亿五六千七百八万九千一百二十三
+[0m[35m(todo)[0m Mandarin Chinese > Trillions > 9876543210987 should return 九万亿八千七百六十亿五亿四千二百一万九百八十七
+[0m[35m(todo)[0m Mandarin Chinese > Trillions > 9999999999999 should return 九万亿九百九十九亿九百九十九百九十九万九千九百九十九
+[0m[35m(todo)[0m Português > Dígitos individuais > 0 deve retornar zero
+[0m[35m(todo)[0m Português > Dígitos individuais > 1 deve retornar um
+[0m[35m(todo)[0m Português > Dígitos individuais > 2 deve retornar dois
+[0m[35m(todo)[0m Português > Dígitos individuais > 3 deve retornar três
+[0m[35m(todo)[0m Português > Dígitos individuais > 4 deve retornar quatro
+[0m[35m(todo)[0m Português > Dígitos individuais > 5 deve retornar cinco
+[0m[35m(todo)[0m Português > Dígitos individuais > 6 deve retornar seis
+[0m[35m(todo)[0m Português > Dígitos individuais > 7 deve retornar sete
+[0m[35m(todo)[0m Português > Dígitos individuais > 8 deve retornar oito
+[0m[35m(todo)[0m Português > Dígitos individuais > 9 deve retornar nove
+[0m[35m(todo)[0m Português > Dígitos duplos > 10 deve retornar dez
+[0m[35m(todo)[0m Português > Dígitos duplos > 11 deve retornar onze
+[0m[35m(todo)[0m Português > Dígitos duplos > 12 deve retornar doze
+[0m[35m(todo)[0m Português > Dígitos duplos > 21 deve retornar vinte e um
+[0m[35m(todo)[0m Português > Dígitos duplos > 99 deve retornar noventa e nove
+[0m[35m(todo)[0m Português > Dígitos triplos > 100 deve retornar cem
+[0m[35m(todo)[0m Português > Dígitos triplos > 101 deve retornar cento e um
+[0m[35m(todo)[0m Português > Dígitos triplos > 111 deve retornar cento e onze
+[0m[35m(todo)[0m Português > Dígitos triplos > 321 deve retornar trezentos e vinte e um
+[0m[35m(todo)[0m Português > Dígitos triplos > 999 deve retornar novecentos e noventa e nove
+[0m[35m(todo)[0m Português > Milhares > 1000 deve retornar mil
+[0m[35m(todo)[0m Português > Milhares > 1001 deve retornar mil e um
+[0m[35m(todo)[0m Português > Milhares > 2001 deve retornar dois mil e um
+[0m[35m(todo)[0m Português > Milhares > 4321 deve retornar quatro mil trezentos e vinte e um
+[0m[35m(todo)[0m Português > Milhares > 9999 deve retornar nove mil novecentos e noventa e nove
+[0m[35m(todo)[0m Português > Milhões > 1000000 deve retornar um milhão
+[0m[35m(todo)[0m Português > Milhões > 2000001 deve retornar dois milhões e um
+[0m[35m(todo)[0m Português > Milhões > 1234567 deve retornar um milhão duzentos e trinta e quatro mil quinhentos e sessenta e sete
+[0m[35m(todo)[0m Português > Milhões > 7654321 deve retornar sete milhões seiscentos e cinquenta e quatro mil trezentos e vinte e um
+[0m[35m(todo)[0m Português > Milhões > 9999999 deve retornar nove milhões novecentos e noventa e nove mil novecentos e noventa e nove
+[0m[35m(todo)[0m Português > Bilhões > 1000000000 deve retornar um bilhão
+[0m[35m(todo)[0m Português > Bilhões > 2000000001 deve retornar dois bilhões e um
+[0m[35m(todo)[0m Português > Bilhões > 1234567890 deve retornar um bilhão duzentos e trinta e quatro milhões quinhentos e sessenta e sete mil oitocentos e noventa
+[0m[35m(todo)[0m Português > Bilhões > 9876543210 deve retornar nove bilhões oitocentos e setenta e seis milhões quinhentos e quarenta e três mil duzentos e dez
+[0m[35m(todo)[0m Português > Bilhões > 9999999999 deve retornar nove bilhões novecentos e noventa e nove milhões novecentos e noventa e nove mil novecentos e noventa e nove
+[0m[35m(todo)[0m Português > Trilhões > 1000000000000 deve retornar um trilhão
+[0m[35m(todo)[0m Português > Trilhões > 2000000000001 deve retornar dois trilhões e um
+[0m[35m(todo)[0m Português > Trilhões > 1234567890123 deve retornar um trilhão duzentos e trinta e quatro bilhões quinhentos e sessenta e sete milhões oitocentos e noventa mil cento e vinte e três
+[0m[35m(todo)[0m Português > Trilhões > 9876543210987 deve retornar nove trilhões oitocentos e setenta e seis bilhões quinhentos e quarenta e três milhões duzentos e dez mil novecentos e oitenta e sete
+[0m[35m(todo)[0m Português > Trilhões > 9999999999999 deve retornar nove trilhões novecentos e noventa e nove bilhões novecentos e noventa e nove milhões novecentos e noventa e nove mil novecentos e noventa e nove
+[0m[35m(todo)[0m اردو > انفرادی اعداد > 0 کو صفر واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > انفرادی اعداد > 1 کو ایک واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > انفرادی اعداد > 2 کو دو واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > انفرادی اعداد > 3 کو تین واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > انفرادی اعداد > 4 کو چار واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > انفرادی اعداد > 5 کو پانچ واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > انفرادی اعداد > 6 کو چھے واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > انفرادی اعداد > 7 کو سات واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > انفرادی اعداد > 8 کو آٹھ واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > انفرادی اعداد > 9 کو نو واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > دو اعداد > 10 کو دس واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > دو اعداد > 11 کو گیارہ واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > دو اعداد > 12 کو بارہ واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > دو اعداد > 21 کو اکیس واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > دو اعداد > 99 کو نواسی واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > تین اعداد > 100 کو سو واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > تین اعداد > 101 کو سو ایک واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > تین اعداد > 111 کو سو گیارہ واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > تین اعداد > 321 کو تین سو اکیس واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > تین اعداد > 999 کو نو سو نواسی واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > ہزار > 1000 کو ایک ہزار واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > ہزار > 1001 کو ایک ہزار ایک واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > ہزار > 2001 کو دو ہزار ایک واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > ہزار > 4321 کو چار ہزار تین سو اکیس واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > ہزار > 9999 کو نو ہزار نو سو نواسی واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > ملین > 1000000 کو ایک ملین واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > ملین > 2000001 کو دو ملین ایک واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > ملین > 1234567 کو ایک ملین ایک سو تیس ہزار چوبیس ہزار پانچ سو ستانوے ستالیس واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > ملین > 7654321 کو سات ملین چھببیس ہزار پانچ سو چوبیس ہزار تین سو اکیس واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > ملین > 9999999 کو نو ملین نو سو نواسی ہزار نو سو نواسی واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > بلین > 1000000000 کو ایک بلین واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > بلین > 2000000001 کو دو بلین ایک واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > بلین > 1234567890 کو ایک بلین ایک سو تیس ہزار پانچ سو چببیس ہزار آٹھ سو نوببیس واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > بلین > 9876543210 کو نو بلین آٹھ سو ستالیس ہزار چوبیس ہزار تین سو دو واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > بلین > 9999999999 کو نو بلین نو سو نواسی ہزار نو سو نواسی واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > ترلین > 1000000000000 کو ایک ترلین واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > ترلین > 2000000000001 کو دو ترلین ایک واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > ترلین > 1234567890123 کو ایک ترلین ایک سو تیس بلین پانچ سو چببیس بلین آٹھ سو نوبیس ہزار ایک سو تیس واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > ترلین > 9876543210987 کو نو ترلین آٹھ سو ستالیس بلین پانچ سو چببیس بلین دو ہزار نو سو ستانوے ستالیس واپس کرنا چاہئے
+[0m[35m(todo)[0m اردو > ترلین > 9999999999999 کو نو ترلین نو سو نواسی بلین نو سو نواسی ہزار نو سو نواسی واپس کرنا چاہئے
+[0m[35m(todo)[0m हिंदी > एक अंक > 0 को शून्य वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > एक अंक > 1 को एक वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > एक अंक > 2 को दो वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > एक अंक > 3 को तीन वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > एक अंक > 4 को चार वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > एक अंक > 5 को पाँच वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > एक अंक > 6 को छह वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > एक अंक > 7 को सात वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > एक अंक > 8 को आठ वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > एक अंक > 9 को नौ वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > दो अंक > 10 को दस वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > दो अंक > 11 को ग्यारह वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > दो अंक > 12 को बारह वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > दो अंक > 21 को इक्कीस वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > दो अंक > 99 को नौंबे वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > तीन अंक > 100 को सौ वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > तीन अंक > 101 को सौ एक वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > तीन अंक > 111 को सौ ग्यारह वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > तीन अंक > 321 को तीन सौ इक्कीस वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > तीन अंक > 999 को नौ सौ उन्नासी वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > हजार > 1000 को एक हजार वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > हजार > 1001 को एक हजार एक वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > हजार > 2001 को दो हजार एक वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > हजार > 4321 को चार हजार तीन सौ इक्कीस वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > हजार > 9999 को नौ हजार नौ सौ उन्नासी वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > मिलियन > 1000000 को एक मिलियन वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > मिलियन > 2000001 को दो मिलियन एक वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > मिलियन > 1234567 को एक मिलियन एक लाख तेईस हजार पाँच सौ सत्तासी वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > मिलियन > 7654321 को सात मिलियन छह लाख चौवन्न हजार तीन सौ इक्कीस वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > मिलियन > 9999999 को नौ मिलियन नौ लाख नौ सौ नौंबे हजार नौ सौ नौंबे वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > बिलियन > 1000000000 को एक बिलियन वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > बिलियन > 2000000001 को दो बिलियन एक वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > बिलियन > 1234567890 को एक बिलियन बारह अरब पैंतालीस करोड़ चौवन्न लाख आठ हजार नौ सौ वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > बिलियन > 9876543210 को नौ बिलियन आठ सौ सत्तासी अरब पैंतालीस करोड़ तीन हजार दो सौ दस वापस करना चाहिए
+[0m[35m(todo)[0m हिंदी > बिलियन > 9999999999 को नौ बिलियन नौ सौ नौ अरब नौ सौ नौ करोड़ नौ सौ नौ लाख नौ सौ नौ हजार नौ सौ नौ वापस करना चाहिए
+[0m[35m(todo)[0m Arabic > Triple digits > 100 should return مائة
+[0m[35m(todo)[0m Arabic > Triple digits > 101 should return مائة وواحد
+[0m[35m(todo)[0m Arabic > Triple digits > 111 should return مائة وأحد عشر
+[0m[35m(todo)[0m Arabic > Triple digits > 321 should return ثلاثة مائة وواحد وعشرون
+[0m[35m(todo)[0m Arabic > Triple digits > 999 should return تسعة مائة وتسعة وتسعون
+[0m[35m(todo)[0m Arabic > Thousands > 1000 should return ألف
+[0m[35m(todo)[0m Arabic > Thousands > 1001 should return ألف وواحد
+[0m[35m(todo)[0m Arabic > Thousands > 2001 should return ألفان وواحد
+[0m[35m(todo)[0m Arabic > Thousands > 4321 should return أربعة آلاف وثلاثمائة وواحد وعشرون
+[0m[35m(todo)[0m Arabic > Thousands > 9999 should return تسعة آلاف وتسعة وتسعون
+[0m[35m(todo)[0m Arabic > Millions > 1000000 should return مليون
+[0m[35m(todo)[0m Arabic > Millions > 2000001 should return مليونان وواحد
+[0m[35m(todo)[0m Arabic > Millions > 1234567 should return مليون ومائتا ثلاث وأربعون ألف وخمسمائة وسبع وستون
+[0m[35m(todo)[0m Arabic > Millions > 7654321 should return سبعة ملايين وستمائة وأربعة وخمسون ألف وثلاث مائة وواحد وعشرون
+[0m[35m(todo)[0m Arabic > Millions > 9999999 should return تسعة ملايين وتسعمائة وتسعة وتسعون ألف وتسعمائة وتسعة وتسعون
+[0m[35m(todo)[0m Arabic > Billions > 1000000000 should return مليار
+[0m[35m(todo)[0m Arabic > Billions > 2000000001 should return ملياران وواحد
+[0m[35m(todo)[0m Arabic > Billions > 1234567890 should return مليار ومائتا ثلاث وأربعون مليون وخمسمائة وستة وسبعون ألف وثمانمائة وتسعون
+[0m[35m(todo)[0m Arabic > Billions > 9876543210 should return تسعة مليارات وثمانمائة وستة وسبعون مليون وخمسمائة وأربعة وثلاثون ألف ومائتين وعشرون
+[0m[35m(todo)[0m Arabic > Billions > 9999999999 should return تسعة مليارات وتسعمائة وتسعة وتسعون مليون وتسعمائة وتسعة وتسعون ألف وتسعمائة وتسعة وتسعون
+[0m[35m(todo)[0m Arabic > Trillions > 1000000000000 should return تريليون
+[0m[35m(todo)[0m Arabic > Trillions > 2000000000001 should return تريليونان وواحد
+[0m[35m(todo)[0m Arabic > Trillions > 1234567890123 should return تريليون ومائتان وثلاثة وأربعون بليون وخمسمائة وستة وسبعون مليون وثمانمائة وتسعون ألف ومائتين وثلاثة وعشرون
+[0m[35m(todo)[0m Arabic > Trillions > 9876543210987 should return تسعة تريليونات وثمانمائة وستة وسبعون بليون وخمسمائة وثلاثة وأربعون مليون وثلاثمائة وعشرون ألف وتسعمائة وسبعة وثمانون
+[0m[35m(todo)[0m Arabic > Trillions > 9999999999999 should return تسعة تريليونات وتسعمائة وتسعة وتسعون بليون وتسعمائة وتسعة وتسعون مليار وتسعمائة وتسعة وتسعون مليون وتسعمائة وتسعة وتسعون ألف وتسعمائة وتسعة وتسعون
+[0m[35m(todo)[0m Español > Dígitos individuales > 0 debería devolver cero
+[0m[35m(todo)[0m Español > Dígitos individuales > 1 debería devolver uno
+[0m[35m(todo)[0m Español > Dígitos individuales > 2 debería devolver dos
+[0m[35m(todo)[0m Español > Dígitos individuales > 3 debería devolver tres
+[0m[35m(todo)[0m Español > Dígitos individuales > 4 debería devolver cuatro
+[0m[35m(todo)[0m Español > Dígitos individuales > 5 debería devolver cinco
+[0m[35m(todo)[0m Español > Dígitos individuales > 6 debería devolver seis
+[0m[35m(todo)[0m Español > Dígitos individuales > 7 debería devolver siete
+[0m[35m(todo)[0m Español > Dígitos individuales > 8 debería devolver ocho
+[0m[35m(todo)[0m Español > Dígitos individuales > 9 debería devolver nueve
+[0m[35m(todo)[0m Español > Doble dígito > 10 debería devolver diez
+[0m[35m(todo)[0m Español > Doble dígito > 11 debería devolver once
+[0m[35m(todo)[0m Español > Doble dígito > 12 debería devolver doce
+[0m[35m(todo)[0m Español > Doble dígito > 21 debería devolver veintiuno
+[0m[35m(todo)[0m Español > Doble dígito > 99 debería devolver noventa y nueve
+[0m[35m(todo)[0m Español > Triple dígito > 100 debería devolver cien
+[0m[35m(todo)[0m Español > Triple dígito > 101 debería devolver ciento uno
+[0m[35m(todo)[0m Español > Triple dígito > 111 debería devolver ciento once
+[0m[35m(todo)[0m Español > Triple dígito > 321 debería devolver trescientos veintiuno
+[0m[35m(todo)[0m Español > Triple dígito > 999 debería devolver novecientos noventa y nueve
+[0m[35m(todo)[0m Español > Miles > 1000 debería devolver mil
+[0m[35m(todo)[0m Español > Miles > 1001 debería devolver mil uno
+[0m[35m(todo)[0m Español > Miles > 2001 debería devolver dos mil uno
+[0m[35m(todo)[0m Español > Miles > 4321 debería devolver cuatro mil trescientos veintiuno
+[0m[35m(todo)[0m Español > Miles > 9999 debería devolver nueve mil novecientos noventa y nueve
+[0m[35m(todo)[0m Español > Millones > 1000000 debería devolver un millón
+[0m[35m(todo)[0m Español > Millones > 2000001 debería devolver dos millones uno
+[0m[35m(todo)[0m Español > Millones > 1234567 debería devolver un millón doscientos treinta y cuatro mil quinientos sesenta y siete
+[0m[35m(todo)[0m Español > Millones > 7654321 debería devolver siete millones seiscientos cincuenta y cuatro mil trescientos veintiuno
+[0m[35m(todo)[0m Español > Millones > 9999999 debería devolver nueve millones novecientos noventa y nueve mil novecientos noventa y nueve
+[0m[35m(todo)[0m Español > Miles de millones > 1000000000 debería devolver mil millones
+[0m[35m(todo)[0m Español > Miles de millones > 2000000001 debería devolver dos mil millones uno
+[0m[35m(todo)[0m Español > Miles de millones > 1234567890 debería devolver mil doscientos treinta y cuatro millones quinientos sesenta y siete mil ochocientos noventa
+[0m[35m(todo)[0m Español > Miles de millones > 9876543210 debería devolver nueve mil ochocientos setenta y seis millones quinientos cuarenta y tres mil doscientos diez
+[0m[35m(todo)[0m Español > Miles de millones > 9999999999 debería devolver nueve mil novecientos noventa y nueve millones novecientos noventa y nueve mil novecientos noventa y nueve
+[0m[35m(todo)[0m Español > Billones > 1000000000000 debería devolver un billón
+[0m[35m(todo)[0m Español > Billones > 2000000000001 debería devolver dos billones uno
+[0m[35m(todo)[0m Español > Billones > 1234567890123 debería devolver un billón doscientos treinta y cuatro mil quinientos sesenta y siete billones ochocientos noventa mil ciento veintitrés
+[0m[35m(todo)[0m Español > Billones > 9876543210987 debería devolver nueve billones ochocientos setenta y seis mil quinientos cuarenta y tres billones doscientos diez mil novecientos ochenta y siete
+[0m[35m(todo)[0m Español > Billones > 9999999999999 debería devolver nueve billones novecientos noventa y nueve mil novecientos noventa y nueve billones novecientos noventa y nueve mil novecientos noventa y nueve
+[0m[35m(todo)[0m Russian > Single digits > 0 should return ноль
+[0m[35m(todo)[0m Russian > Single digits > 1 should return один
+[0m[35m(todo)[0m Russian > Single digits > 2 should return два
+[0m[35m(todo)[0m Russian > Single digits > 3 should return три
+[0m[35m(todo)[0m Russian > Single digits > 4 should return четыре
+[0m[35m(todo)[0m Russian > Single digits > 5 should return пять
+[0m[35m(todo)[0m Russian > Single digits > 6 should return шесть
+[0m[35m(todo)[0m Russian > Single digits > 7 should return семь
+[0m[35m(todo)[0m Russian > Single digits > 8 should return восемь
+[0m[35m(todo)[0m Russian > Single digits > 9 should return девять
+[0m[35m(todo)[0m Russian > Double digits > 10 should return десять
+[0m[35m(todo)[0m Russian > Double digits > 11 should return одиннадцать
+[0m[35m(todo)[0m Russian > Double digits > 12 should return двенадцать
+[0m[35m(todo)[0m Russian > Double digits > 21 should return двадцать один
+[0m[35m(todo)[0m Russian > Double digits > 99 should return девяносто девять
+[0m[35m(todo)[0m Russian > Triple digits > 100 should return сто
+[0m[35m(todo)[0m Russian > Triple digits > 101 should return сто один
+[0m[35m(todo)[0m Russian > Triple digits > 111 should return сто одиннадцать
+[0m[35m(todo)[0m Russian > Triple digits > 321 should return триста двадцать один
+[0m[35m(todo)[0m Russian > Triple digits > 999 should return девятьсот девяносто девять
+[0m[35m(todo)[0m Russian > Thousands > 1000 should return одна тысяча
+[0m[35m(todo)[0m Russian > Thousands > 1001 should return одна тысяча один
+[0m[35m(todo)[0m Russian > Thousands > 2001 should return две тысячи один
+[0m[35m(todo)[0m Russian > Thousands > 4321 should return четыре тысячи триста двадцать один
+[0m[35m(todo)[0m Russian > Thousands > 9999 should return девять тысяч девятьсот девяносто девять
+[0m[35m(todo)[0m Russian > Millions > 1000000 should return один миллион
+[0m[35m(todo)[0m Russian > Millions > 2000001 should return два миллиона один
+[0m[35m(todo)[0m Russian > Millions > 1234567 should return один миллион двести тридцать четыре тысячи пятьсот шестьдесят семь
+[0m[35m(todo)[0m Russian > Millions > 7654321 should return семь миллионов шестьсот пятьдесят четыре тысячи триста двадцать один
+[0m[35m(todo)[0m Russian > Millions > 9999999 should return девять миллионов девятьсот девяносто девять тысяч девятьсот девяносто девять
+[0m[35m(todo)[0m Russian > Billions > 1000000000 should return один миллиард
+[0m[35m(todo)[0m Russian > Billions > 2000000001 should return два миллиарда один
+[0m[35m(todo)[0m Russian > Billions > 1234567890 should return один миллиард двести тридцать четыре миллиона пятьсот шестьдесят семь тысяч восемьсот девяносто
+[0m[35m(todo)[0m Russian > Billions > 9876543210 should return девять миллиардов восемьсот семьдесят шесть миллионов пятьсот сорок три тысячи двести десять
+[0m[35m(todo)[0m Russian > Billions > 9999999999 should return девять миллиардов девятьсот девяносто девять миллионов девятьсот девяносто девять тысяч девятьсот девяносто девять
+[0m[35m(todo)[0m Russian > Trillions > 1000000000000 should return один триллион
+[0m[35m(todo)[0m Russian > Trillions > 2000000000001 should return два триллиона один
+[0m[35m(todo)[0m Russian > Trillions > 1234567890123 should return один триллион двести тридцать четыре миллиарда пятьсот шестьдесят семь миллионов восемьсот девяносто тысяч сто двадцать три
+[0m[35m(todo)[0m Russian > Trillions > 9876543210987 should return девять триллионов восемьсот семьдесят шесть миллиардов пятьсот сорок три миллиона двести десять тысяч девятьсот восемьдесят семь
+[0m[35m(todo)[0m Russian > Trillions > 9999999999999 should return девять триллионов девятьсот девяносто девять миллиардов девятьсот девяносто девять миллионов девятьсот девяносто девять тысяч девятьсот девяносто девять
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > একক সংখ্যা > 0 দিয়ে শূন্য দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > একক সংখ্যা > 1 দিয়ে এক দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > একক সংখ্যা > 2 দিয়ে দুই দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > একক সংখ্যা > 3 দিয়ে তিন দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > একক সংখ্যা > 4 দিয়ে চার দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > একক সংখ্যা > 5 দিয়ে পাঁচ দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > একক সংখ্যা > 6 দিয়ে ছয় দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > একক সংখ্যা > 7 দিয়ে সাত দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > একক সংখ্যা > 8 দিয়ে আট দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > একক সংখ্যা > 9 দিয়ে নয় দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > দ্বিতীয় সংখ্যা > 10 দিয়ে দশ দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > দ্বিতীয় সংখ্যা > 11 দিয়ে এগারো দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > দ্বিতীয় সংখ্যা > 12 দিয়ে বারো দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > দ্বিতীয় সংখ্যা > 21 দিয়ে একুশ দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > দ্বিতীয় সংখ্যা > 99 দিয়ে নিরাশি দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > ত্রয়ীক সংখ্যা > 100 দিয়ে একশো দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > ত্রয়ীক সংখ্যা > 101 দিয়ে একশো এক দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > ত্রয়ীক সংখ্যা > 111 দিয়ে একশো এগারো দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > ত্রয়ীক সংখ্যা > 321 দিয়ে তিনশো একুশ দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > ত্রয়ীক সংখ্যা > 999 দিয়ে নয়শো নিরাশি দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > হাজার > 1000 দিয়ে এক হাজার দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > হাজার > 1001 দিয়ে এক হাজার এক দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > হাজার > 2001 দিয়ে দুই হাজার এক দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > হাজার > 4321 দিয়ে চার হাজার তিনশো একুশ দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > হাজার > 9999 দিয়ে নয় হাজার নয়শো নিরাশি দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > মিলিয়ন > 1000000 দিয়ে এক মিলিয়ন দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > মিলিয়ন > 2000001 দিয়ে দুই মিলিয়ন এক দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > মিলিয়ন > 1234567 দিয়ে এক মিলিয়ন তিনশো চুরাশি হাজার পাঁচ শো ছয় দশ দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > মিলিয়ন > 7654321 দিয়ে সাত মিলিয়ন ছয় শো চুরাশি হাজার চার শো একুশ দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > মিলিয়ন > 9999999 দিয়ে নয় মিলিয়ন নয়শো নিরাশি হাজার নয়শো নিরাশি দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > বিলিয়ন > 1000000000 দিয়ে এক বিলিয়ন দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > বিলিয়ন > 2000000001 দিয়ে দুই বিলিয়ন এক দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > বিলিয়ন > 1234567890 দিয়ে এক বিলিয়ন তিনশো চুরাশি মিলিয়ন পাঁচ শো ছয় দশ হাজার আট শো নিরাশি দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > বিলিয়ন > 9876543210 দিয়ে নয় বিলিয়ন আট শো সাত ছয় মিলিয়ন চুরাশি হাজার তিনশো দুই দশ দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > বিলিয়ন > 9999999999 দিয়ে নয় বিলিয়ন নয়শো নিরাশি মিলিয়ন নয়শো নিরাশি হাজার নয়শো নিরাশি দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > ট্রিলিয়ন > 1000000000000 দিয়ে এক ট্রিলিয়ন দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > ট্রিলিয়ন > 2000000000001 দিয়ে দুই ট্রিলিয়ন এক দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > ট্রিলিয়ন > 1234567890123 দিয়ে এক ট্রিলিয়ন তিনশো চুরাশি বিলিয়ন পাঁচ শো ছয় দশ মিলিয়ন আট শো নিরাশি হাজার দুই শো তিন দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > ট্রিলিয়ন > 9876543210987 দিয়ে নয় ট্রিলিয়ন আট শো সাত ছয় বিলিয়ন চুরাশি হাজার তিনশো দুই দশ কোটি আট শো সাত দেয়
+[0m[35m(todo)[0m ইন্দোনেশিয়ান > ট্রিলিয়ন > 9999999999999 দিয়ে নয় ট্রিলিয়ন নয়শো নিরাশি বিলিয়ন নয়শো নিরাশি মিলিয়ন নয়শো নিরাশি হাজার নয়শো নিরাশি কোটি নয়শো নিরাশি দেয়
+[0m[35m(todo)[0m Kiswahili > Namba moja > 0 inapaswa kurudisha sifuri
+[0m[35m(todo)[0m Kiswahili > Namba moja > 1 inapaswa kurudisha moja
+[0m[35m(todo)[0m Kiswahili > Namba moja > 2 inapaswa kurudisha mbili
+[0m[35m(todo)[0m Kiswahili > Namba moja > 3 inapaswa kurudisha tatu
+[0m[35m(todo)[0m Kiswahili > Namba moja > 4 inapaswa kurudisha nne
+[0m[35m(todo)[0m Kiswahili > Namba moja > 5 inapaswa kurudisha tano
+[0m[35m(todo)[0m Kiswahili > Namba moja > 6 inapaswa kurudisha sita
+[0m[35m(todo)[0m Kiswahili > Namba moja > 7 inapaswa kurudisha saba
+[0m[35m(todo)[0m Kiswahili > Namba moja > 8 inapaswa kurudisha nane
+[0m[35m(todo)[0m Kiswahili > Namba moja > 9 inapaswa kurudisha tisa
+[0m[35m(todo)[0m Kiswahili > Namba mbili > 10 inapaswa kurudisha kumi
+[0m[35m(todo)[0m Kiswahili > Namba mbili > 11 inapaswa kurudisha kumi na moja
+[0m[35m(todo)[0m Kiswahili > Namba mbili > 12 inapaswa kurudisha kumi na mbili
+[0m[35m(todo)[0m Kiswahili > Namba mbili > 21 inapaswa kurudisha ishirini na moja
+[0m[35m(todo)[0m Kiswahili > Namba mbili > 99 inapaswa kurudisha tisini na tisa
+[0m[35m(todo)[0m Kiswahili > Namba tatu > 100 inapaswa kurudisha mia moja
+[0m[35m(todo)[0m Kiswahili > Namba tatu > 101 inapaswa kurudisha mia moja na moja
+[0m[35m(todo)[0m Kiswahili > Namba tatu > 111 inapaswa kurudisha mia moja na kumi na moja
+[0m[35m(todo)[0m Kiswahili > Namba tatu > 321 inapaswa kurudisha mia tatu na ishirini na moja
+[0m[35m(todo)[0m Kiswahili > Namba tatu > 999 inapaswa kurudisha mia tisa na tisini na tisa
+[0m[35m(todo)[0m Kiswahili > Elfu > 1000 inapaswa kurudisha elfu moja
+[0m[35m(todo)[0m Kiswahili > Elfu > 1001 inapaswa kurudisha elfu moja na moja
+[0m[35m(todo)[0m Kiswahili > Elfu > 2001 inapaswa kurudisha elfu mbili na moja
+[0m[35m(todo)[0m Kiswahili > Elfu > 4321 inapaswa kurudisha elfu nne na mia tatu ishirini na moja
+[0m[35m(todo)[0m Kiswahili > Elfu > 9999 inapaswa kurudisha elfu tisa na mia tisini na tisa
+[0m[35m(todo)[0m Kiswahili > Milioni > 1000000 inapaswa kurudisha milioni moja
+[0m[35m(todo)[0m Kiswahili > Milioni > 2000001 inapaswa kurudisha milioni mbili na moja
+[0m[35m(todo)[0m Kiswahili > Milioni > 1234567 inapaswa kurudisha milioni moja na mia mbili thelathini na nne elfu mia tano mia sitini na saba
+[0m[35m(todo)[0m Kiswahili > Milioni > 7654321 inapaswa kurudisha milioni saba na mia sita thelathini na nne elfu mia tatu mia ishirini na moja
+[0m[35m(todo)[0m Kiswahili > Milioni > 9999999 inapaswa kurudisha milioni tisa na mia tisa tisini na tisa elfu tisa na mia tisini na tisa
+[0m[35m(todo)[0m Kiswahili > Bilioni > 1000000000 inapaswa kurudisha bilioni moja
+[0m[35m(todo)[0m Kiswahili > Bilioni > 2000000001 inapaswa kurudisha bilioni mbili na moja
+[0m[35m(todo)[0m Kiswahili > Bilioni > 1234567890 inapaswa kurudisha bilioni moja na mia mbili thelathini na nne milioni mia tano mia sitini na saba elfu mia nane mia tisini
+[0m[35m(todo)[0m Kiswahili > Bilioni > 9876543210 inapaswa kurudisha bilioni tisa na mia nane thelathini na saba milioni mia sita mia tano mia arobaini na tatu elfu mia mbili mia kumi
+[0m[35m(todo)[0m Kiswahili > Bilioni > 9999999999 inapaswa kurudisha bilioni tisa na mia tisa tisini na tisa milioni tisa na mia tisini na tisa elfu tisa na mia tisini na tisa
+[0m[35m(todo)[0m Kiswahili > Trilioni > 1000000000000 inapaswa kurudisha trilioni moja
+[0m[35m(todo)[0m Kiswahili > Trilioni > 2000000000001 inapaswa kurudisha trilioni mbili na moja
+[0m[35m(todo)[0m Kiswahili > Trilioni > 1234567890123 inapaswa kurudisha trilioni moja na mia mbili thelathini na nne bilioni mia tano mia sitini na saba milioni mia nane mia tisini elfu mia moja mia ishirini na tatu
+[0m[35m(todo)[0m Kiswahili > Trilioni > 9876543210987 inapaswa kurudisha trilioni tisa na mia nane thelathini na saba bilioni mia sita mia tano mia arobaini na tatu milioni mia mbili mia kumi elfu mia tisa mia themanini na saba
+[0m[35m(todo)[0m Kiswahili > Trilioni > 9999999999999 inapaswa kurudisha trilioni tisa na mia tisa tisini na tisa bilioni tisa na mia tisini na tisa milioni tisa na mia tisini na tisa elfu tisa na mia tisini na tisa
+[0m[35m(todo)[0m German > Einzeldigit > 0 sollte null zurückgeben
+[0m[35m(todo)[0m German > Einzeldigit > 1 sollte eins zurückgeben
+[0m[35m(todo)[0m German > Einzeldigit > 2 sollte zwei zurückgeben
+[0m[35m(todo)[0m German > Einzeldigit > 3 sollte drei zurückgeben
+[0m[35m(todo)[0m German > Einzeldigit > 4 sollte vier zurückgeben
+[0m[35m(todo)[0m German > Einzeldigit > 5 sollte fünf zurückgeben
+[0m[35m(todo)[0m German > Einzeldigit > 6 sollte sechs zurückgeben
+[0m[35m(todo)[0m German > Einzeldigit > 7 sollte sieben zurückgeben
+[0m[35m(todo)[0m German > Einzeldigit > 8 sollte acht zurückgeben
+[0m[35m(todo)[0m German > Einzeldigit > 9 sollte neun zurückgeben
+[0m[35m(todo)[0m German > Zweistellige Zahlen > 10 sollte zehn zurückgeben
+[0m[35m(todo)[0m German > Zweistellige Zahlen > 11 sollte elf zurückgeben
+[0m[35m(todo)[0m German > Zweistellige Zahlen > 12 sollte zwölf zurückgeben
+[0m[35m(todo)[0m German > Zweistellige Zahlen > 21 sollte einundzwanzig zurückgeben
+[0m[35m(todo)[0m German > Zweistellige Zahlen > 99 sollte neunundneunzig zurückgeben
+[0m[35m(todo)[0m German > Dreistellige Zahlen > 100 sollte einhundert zurückgeben
+[0m[35m(todo)[0m German > Dreistellige Zahlen > 101 sollte einhunderteins zurückgeben
+[0m[35m(todo)[0m German > Dreistellige Zahlen > 111 sollte einhundertelf zurückgeben
+[0m[35m(todo)[0m German > Dreistellige Zahlen > 321 sollte dreihunderteinundzwanzig zurückgeben
+[0m[35m(todo)[0m German > Dreistellige Zahlen > 999 sollte neunhundertneunundneunzig zurückgeben
+[0m[35m(todo)[0m German > Tausender > 1000 sollte eintausend zurückgeben
+[0m[35m(todo)[0m German > Tausender > 1001 sollte eintausendeins zurückgeben
+[0m[35m(todo)[0m German > Tausender > 2001 sollte zweitausendeins zurückgeben
+[0m[35m(todo)[0m German > Tausender > 4321 sollte viertausenddreihunderteinundzwanzig zurückgeben
+[0m[35m(todo)[0m German > Tausender > 9999 sollte neuntausendneunhundertneunundneunzig zurückgeben
+[0m[35m(todo)[0m German > Millionen > 1000000 sollte eine Million zurückgeben
+[0m[35m(todo)[0m German > Millionen > 2000001 sollte zwei Millionen eins zurückgeben
+[0m[35m(todo)[0m German > Millionen > 1234567 sollte eine Million zweihundertdreiundvierzigtausendfünfhundertsiebenundsechzig zurückgeben
+[0m[35m(todo)[0m German > Millionen > 7654321 sollte sieben Millionen sechshundertvierundfünfzigtausenddreihunderteinundzwanzig zurückgeben
+[0m[35m(todo)[0m German > Millionen > 9999999 sollte neun Millionen neunhundertneunundneunzigtausendneunhundertneunundneunzig zurückgeben
+[0m[35m(todo)[0m German > Milliarden > 1000000000 sollte eine Milliarde zurückgeben
+[0m[35m(todo)[0m German > Milliarden > 2000000001 sollte zwei Milliarden eins zurückgeben
+[0m[35m(todo)[0m German > Milliarden > 1234567890 sollte eine Milliarde zweihundertdreiundvierzig Millionen fünfhundertsechsundachtzigtausendneunhundertneunzig zurückgeben
+[0m[35m(todo)[0m German > Milliarden > 9876543210 sollte neun Milliarden achthundertsiebenundsechzig Millionen fünfhundertvierundfünfzigtausendzweihundertzehn zurückgeben
+[0m[35m(todo)[0m German > Milliarden > 9999999999 sollte neun Milliarden neunhundertneunundneunzig Millionen neunhundertneunundneunzigtausendneunhundertneunundneunzig zurückgeben
+[0m[35m(todo)[0m German > Billionen > 1000000000000 sollte eine Billion zurückgeben
+[0m[35m(todo)[0m German > Billionen > 2000000000001 sollte zwei Billionen eins zurückgeben
+[0m[35m(todo)[0m German > Billionen > 1234567890123 sollte eine Billion zweihundertdreiundvierzig Milliarden fünfhundertsechsundachtzig Millionen neuntausendneunhundertdreiundzwanzig zurückgeben
+[0m[35m(todo)[0m German > Billionen > 9876543210987 sollte neun Billionen achthundertsiebenundsechzig Milliarden fünfhundertvierundfünfzig Millionen dreihundertzehntausendneunhundertachtundsiebzig zurückgeben
+[0m[35m(todo)[0m German > Billionen > 9999999999999 sollte neun Billionen neunhundertneunundneunzig Milliarden neunhundertneunundneunzig Millionen neuntausendneunhundertneunundneunzig zurückgeben
+[0m[35m(todo)[0m 日本語 > 単一の数字 > 0 は ゼロ を返すべき
+[0m[35m(todo)[0m 日本語 > 単一の数字 > 1 は 一 を返すべき
+[0m[35m(todo)[0m 日本語 > 単一の数字 > 2 は 二 を返すべき
+[0m[35m(todo)[0m 日本語 > 単一の数字 > 3 は 三 を返すべき
+[0m[35m(todo)[0m 日本語 > 単一の数字 > 4 は 四 を返すべき
+[0m[35m(todo)[0m 日本語 > 単一の数字 > 5 は 五 を返すべき
+[0m[35m(todo)[0m 日本語 > 単一の数字 > 6 は 六 を返すべき
+[0m[35m(todo)[0m 日本語 > 単一の数字 > 7 は 七 を返すべき
+[0m[35m(todo)[0m 日本語 > 単一の数字 > 8 は 八 を返すべき
+[0m[35m(todo)[0m 日本語 > 単一の数字 > 9 は 九 を返すべき
+[0m[35m(todo)[0m 日本語 > 2桁の数字 > 10 は 十 を返すべき
+[0m[35m(todo)[0m 日本語 > 2桁の数字 > 11 は 十一 を返すべき
+[0m[35m(todo)[0m 日本語 > 2桁の数字 > 12 は 十二 を返すべき
+[0m[35m(todo)[0m 日本語 > 2桁の数字 > 21 は 二十一 を返すべき
+[0m[35m(todo)[0m 日本語 > 2桁の数字 > 99 は 九十九 を返すべき
+[0m[35m(todo)[0m 日本語 > 3桁の数字 > 100 は 百 を返すべき
+[0m[35m(todo)[0m 日本語 > 3桁の数字 > 101 は 百一 を返すべき
+[0m[35m(todo)[0m 日本語 > 3桁の数字 > 111 は 百十一 を返すべき
+[0m[35m(todo)[0m 日本語 > 3桁の数字 > 321 は 三百二十一 を返すべき
+[0m[35m(todo)[0m 日本語 > 3桁の数字 > 999 は 九百九十九 を返すべき
+[0m[35m(todo)[0m 日本語 > 千 > 1000 は 千 を返すべき
+[0m[35m(todo)[0m 日本語 > 千 > 1001 は 千一 を返すべき
+[0m[35m(todo)[0m 日本語 > 千 > 2001 は 二千一 を返すべき
+[0m[35m(todo)[0m 日本語 > 千 > 4321 は 四千三百二十一 を返すべき
+[0m[35m(todo)[0m 日本語 > 千 > 9999 は 九千九百九十九 を返すべき
+[0m[35m(todo)[0m 日本語 > 百万 > 1000000 は 百万 を返すべき
+[0m[35m(todo)[0m 日本語 > 百万 > 2000001 は 二百万一 を返すべき
+[0m[35m(todo)[0m 日本語 > 百万 > 1234567 は 百二十三万四千五百六十七 を返すべき
+[0m[35m(todo)[0m 日本語 > 百万 > 7654321 は 七百六十五万四千三百二十一 を返すべき
+[0m[35m(todo)[0m 日本語 > 百万 > 9999999 は 九百九十九万九千九百九十九 を返すべき
+[0m[35m(todo)[0m 日本語 > 十億 > 1000000000 は 十億 を返すべき
+[0m[35m(todo)[0m 日本語 > 十億 > 2000000001 は 二十億一 を返すべき
+[0m[35m(todo)[0m 日本語 > 十億 > 1234567890 は 百二十三億四千五百六十七万八千九百 を返すべき
+[0m[35m(todo)[0m 日本語 > 十億 > 9876543210 は 九十八億七千六百五十四万三千二百十 を返すべき
+[0m[35m(todo)[0m 日本語 > 十億 > 9999999999 は 九十九億九千九百九十九万九千九百九十九 を返すべき
+[0m[35m(todo)[0m 日本語 > 兆 > 1000000000000 は 兆 を返すべき
+[0m[35m(todo)[0m 日本語 > 兆 > 2000000000001 は 二兆一 を返すべき
+[0m[35m(todo)[0m 日本語 > 兆 > 1234567890123 は 千二百三十四兆五百六十七億八千九百十二万三百 を返すべき
+[0m[35m(todo)[0m 日本語 > 兆 > 9876543210987 は 九千八百七十六兆五千四百三十二億一千九百八十七万 を返すべき
+[0m[35m(todo)[0m 日本語 > 兆 > 9999999999999 は 九千九百九十九兆九千九百九十九億九千九百九十九万九千九百九十九 を返すべき
+
+ 140 pass
+ 465 todo
+ 0 fail
+ 150 expect() calls
+Ran 605 tests across 19 files. [80.00ms]

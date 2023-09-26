@@ -5,17 +5,17 @@
  */
 export type Lang =
   | 'de'
+  | 'ar'
   | 'bn'
   | 'es'
   | 'ur'
   | 'sw'
-  | 'ru'
+  | 'en'
+  | 'zh'
   | 'hi'
   | 'fr'
-  | 'zh'
+  | 'ru'
   | 'pt'
-  | 'ar'
   | 'mr'
   | 'id'
-  | 'en'
   | 'ja';

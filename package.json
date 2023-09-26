@@ -1,5 +1,5 @@
 {
-  "name": "i18n-num-in-words",
+  "name": "root",
   "description": "Converts numbers to words in any language.",
   "version": "0.0.0",
   "license": "to-be-defined",
@@ -15,14 +15,19 @@
     "website"
   ],
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "dev": "turbo run dev"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
-    "bun-types": "latest",
+    "bun-types": "^1.0.3",
     "husky": "^8.0.3",
     "prettier": "^3.0.3",
+    "turbo": "^1.10.14",
     "typescript": "^5.2.2"
   },
   "engines": {

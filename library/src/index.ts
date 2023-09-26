@@ -1,3 +1,3 @@
 export * from './lang';
 export * from './lang.type';
-export * from './utils';
+export * from './num-in-words';

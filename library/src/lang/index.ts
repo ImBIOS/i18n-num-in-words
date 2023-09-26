@@ -1,4 +1,3 @@
-// TODO: Move all the language files to individual folder and include the test and add index file
 export * from './ar';
 export * from './bn';
 export * from './de';

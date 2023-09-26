@@ -1,0 +1,105 @@
+---
+title: i18n-num-in-words
+description: A small library to convert numbers to words in different languages
+template: splash
+hero:
+  tagline: A small library to convert numbers to words in different languages
+  # image:
+  #   file: ../../assets/houston.webp
+  actions:
+    - text: Star us on GitHub
+      link: https://github.com/ImBIOS/i18n-num-in-words
+      icon: star
+      variant: primary
+---
+
+import { Card, CardGrid, Tabs, TabItem } from '@astrojs/starlight/components';
+import { Playground } from '~/components/playground.tsx';
+
+## Playground
+
+<section style="background: #050505; padding: 2rem 1rem; border-radius: 0.5rem;">
+  <Tabs>
+    <TabItem label="English" >
+    <Playground lang="en" client:load />
+    </TabItem>
+    <TabItem label="Bahasa Indonesia">
+    <Playground lang="id" client:load />
+    </TabItem>
+
+  </Tabs>
+</section>
+
+## Getting Started
+
+<section style="background: #050505; padding: 2rem 1rem; border-radius: 0.5rem;">
+  <Tabs>
+    {/* prettier-ignore */}
+    <TabItem label="npm" >
+    ```sh
+    npm install i18n-num-in-words
+    ```
+    </TabItem>
+    {/* prettier-ignore */}
+    <TabItem label="yarn">
+    ```sh
+    yarn add i18n-num-in-words
+    ```
+    </TabItem>
+    {/* prettier-ignore */}
+    <TabItem label="pnpm">
+    ```sh
+    pnpm add i18n-num-in-words
+    ```
+    </TabItem>
+    {/* prettier-ignore */}
+    <TabItem label="bun">
+    ```sh
+    bun add i18n-num-in-words
+    ```
+    </TabItem>
+  </Tabs>
+</section>
+
+## Usage
+
+```ts
+import { indonesianNumInWords } from 'i18n-num-in-words';
+
+indonesianNumInWords(1234567890);
+// => 'satu miliar dua ratus tiga puluh empat juta lima ratus enam puluh tujuh ribu delapan ratus sembilan puluh'
+
+import { englishNumInWords } from 'i18n-num-in-words';
+
+englishNumInWords(1234567890);
+// => 'one billion two hundred thirty four million five hundred sixty seven thousand eight hundred ninety'
+
+import { arabicNumInWords } from 'i18n-num-in-words';
+
+arabicNumInWords(1234567890);
+// => 'مليار واحد ومائتان وأربعة وثلاثون مليون وخمسمائة وستة وسبعون ألف وثمانمائة وتسعون'
+```
+
+## Features
+
+<CardGrid stagger>
+  <Card title="Internationalized" icon="translate">
+    95% of the world's population speaks a language other than English. We get
+    you covered.
+  </Card>
+  <Card title="Fully type safe" icon="approve-check-circle">
+    Enjoy the benefits of type safety and static type inference in TypeScript
+  </Card>
+  <Card title="Small bundle size" icon="puzzle">
+    This package, `i18n-num-in-words`, is a small library with zero
+    dependencies.
+  </Card>
+  <Card title="100% test coverage" icon="rocket">
+    We have -almost- 100% test coverage to ensure that the library works as
+    expected.
+  </Card>
+  <Card title="Optimized for tree-shaking" icon="random">
+    This library is optimized for tree-shaking. Only the languages you use will
+    be included in your bundle.
+  </Card>
+</CardGrid>
