@@ -91,11 +91,3 @@ For details, check out our [full documentation](#).
 ---
 
 Feel free to star us on GitHub and contribute: [i18n-num-in-words GitHub Repo](https://github.com/ImBIOS/i18n-num-in-words)
-
----
-
-**Speculative Note**: A plugin ecosystem could be a future feature, allowing users to add new languages or override existing ones.
-
----
-
-**SEO Optimization Strategy**: This README.md file is structured for SEO optimization with keyword-rich sections, particularly in headings and early paragraphs. It should help this GitHub repo surface more frequently in organic search results. Feel free to adjust keywords and phrases based on trends in your field.
