@@ -1,0 +1,85 @@
+---
+title: i18n-num-in-words
+description: Uma pequena biblioteca para converter números em palavras em diferentes idiomas
+template: splash
+hero:
+  tagline: Uma pequena biblioteca para converter números em palavras em diferentes idiomas
+  actions:
+    - text: Nos dê uma estrela no GitHub
+      link: https://github.com/ImBIOS/i18n-num-in-words
+      icon: star
+      variant: primary
+---
+
+import { Card, CardGrid, Tabs, TabItem } from '@astrojs/starlight/components';
+
+## Começando
+
+<section style="background: #050505; padding: 2rem 1rem; border-radius: 0.5rem;">
+  <Tabs>
+    {/* prettier-ignore */}
+    <TabItem label="npm">
+    ```sh
+    npm install i18n-num-in-words
+    ```
+    </TabItem>
+    {/* prettier-ignore */}
+    <TabItem label="yarn">
+    ```sh
+    yarn add i18n-num-in-words
+    ```
+    </TabItem>
+    {/* prettier-ignore */}
+    <TabItem label="pnpm">
+    ```sh
+    pnpm add i18n-num-in-words
+    ```
+    </TabItem>
+    {/* prettier-ignore */}
+    <TabItem label="bun">
+    ```sh
+    bun add i18n-num-in-words
+    ```
+    </TabItem>
+  </Tabs>
+</section>
+
+## Uso
+
+```ts
+import { indonesianNumInWords } from 'i18n-num-in-words';
+
+indonesianNumInWords(1234567890);
+// => 'satu miliar dua ratus tiga puluh empat juta lima ratus enam puluh tujuh ribu delapan ratus sembilan puluh'
+
+import { englishNumInWords } from 'i18n-num-in-words';
+
+englishNumInWords(1234567890);
+// => 'um bilhão duzentos e trinta e quatro milhões quinhentos e sessenta e sete mil oitocentos e noventa'
+
+import { arabicNumInWords } from 'i18n-num-in-words';
+
+arabicNumInWords(1234567890);
+// => 'مليار واحد ومائتان وأربعة وثلاثون مليون وخمسمائة وستة وسبعون ألف وثمانمائة وتسعون'
+```
+
+## Recursos
+
+<CardGrid stagger>
+  <Card title="Internacionalizado" icon="translate">
+    95% da população mundial fala um idioma diferente do inglês. Estamos cobertos.
+  </Card>
+  <Card title="Totalmente seguro em termos de tipo" icon="approve-check-circle">
+    Aproveite os benefícios da segurança em termos de tipo e da inferência de tipo estático em TypeScript.
+  </Card>
+  <Card title="Tamanho de pacote pequeno" icon="puzzle">
+    Este pacote, 'i18n-num-in-words', é uma pequena biblioteca sem dependências.
+  </Card>
+  <Card title="Cobertura de teste de 100%" icon="rocket">
+    Temos -quase- 100% de cobertura de teste para garantir que a biblioteca funcione como esperado.
+  </Card>
+  <Card title="Otimizado para tree-shaking" icon="random">
+    Esta biblioteca é otimizada para tree-shaking. Apenas os idiomas que você usarão serão incluídos no seu pacote.
+  </Card>
+</CardGrid>
+```

@@ -3,7 +3,7 @@ import { portugueseNumInWords } from './pt';
 
 describe.todo('Português', () => {
   describe('Dígitos individuais', () => {
-    test.each<readonly [number, string]>([
+    test.each<Array<[number, string]>>([
       [0, 'zero'],
       [1, 'um'],
       [2, 'dois'],
@@ -20,7 +20,7 @@ describe.todo('Português', () => {
   });
 
   describe('Dígitos duplos', () => {
-    test.each<readonly [number, string]>([
+    test.each<Array<[number, string]>>([
       [10, 'dez'],
       [11, 'onze'],
       [12, 'doze'],
@@ -32,7 +32,7 @@ describe.todo('Português', () => {
   });
 
   describe('Dígitos triplos', () => {
-    test.each<readonly [number, string]>([
+    test.each<Array<[number, string]>>([
       [100, 'cem'],
       [101, 'cento e um'],
       [111, 'cento e onze'],
@@ -44,7 +44,7 @@ describe.todo('Português', () => {
   });
 
   describe('Milhares', () => {
-    test.each<readonly [number, string]>([
+    test.each<Array<[number, string]>>([
       [1000, 'mil'],
       [1001, 'mil e um'],
       [2001, 'dois mil e um'],
@@ -56,7 +56,7 @@ describe.todo('Português', () => {
   });
 
   describe('Milhões', () => {
-    test.each<readonly [number, string]>([
+    test.each<Array<[number, string]>>([
       [1000000, 'um milhão'],
       [2000001, 'dois milhões e um'],
       [
@@ -77,7 +77,7 @@ describe.todo('Português', () => {
   });
 
   describe('Bilhões', () => {
-    test.each<readonly [number, string]>([
+    test.each<Array<[number, string]>>([
       [1000000000, 'um bilhão'],
       [2000000001, 'dois bilhões e um'],
       [
@@ -98,7 +98,7 @@ describe.todo('Português', () => {
   });
 
   describe('Trilhões', () => {
-    test.each<readonly [number, string]>([
+    test.each<Array<[number, string]>>([
       [1000000000000, 'um trilhão'],
       [2000000000001, 'dois trilhões e um'],
       [
