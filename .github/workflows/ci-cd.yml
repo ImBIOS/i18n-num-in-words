@@ -28,6 +28,7 @@ jobs:
         # TODO: For Debug only, allow only branch fix/cd
         run: |
           cd library
+          bun run build
           VERSION=$(node -p "require('./package.json').version")-canary.$(date +%s)
           echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ./.npmrc
           npm version $VERSION --no-git-tag-version

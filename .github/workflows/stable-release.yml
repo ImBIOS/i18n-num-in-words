@@ -30,6 +30,7 @@ jobs:
         run: |
           VERSION=$(node determine-next-version.js)
           cd library
+          bun run build
           echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
           npm version $VERSION --no-git-tag-version
           npm publish --tag latest
