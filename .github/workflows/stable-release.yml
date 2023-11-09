@@ -7,7 +7,7 @@ on:
     - cron: '0 0 1 * *'
 
 jobs:
-  monthly-release:
+  stable-release:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -21,6 +21,7 @@ jobs:
         with:
           node-version-file: '.node-version'
           registry-url: 'https://registry.npmjs.org'
+      - run: bun install
       - name: Check for canary releases
         id: canary-check
         run: |
@@ -47,9 +48,6 @@ jobs:
           # Get last tag name to compare the history
           LAST_TAG=$(git describe --tags --abbrev=0)
 
-          # Create a new Git tag
-          git tag $VERSION
-
           # Generate release notes from commits
           echo "RELEASE_NOTES=$(git log ${LAST_TAG}..HEAD --pretty=format:'* %s (%h)' --reverse)" >> $GITHUB_ENV
 
@@ -62,3 +60,4 @@ jobs:
         if: env.CANARY_EXISTS == 'true'
         with:
           tag: ${{ env.VERSION }}
+          body: ${{ env.RELEASE_NOTES }}
