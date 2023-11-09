@@ -38,12 +38,12 @@ jobs:
           cd library
           bun run build
 
-          yarn version --new-version $VERSION
-          yarn publish --tag latest
-
           # Set the Git user
           git config user.name github-actions
           git config user.email github-actions@github.com
+
+          yarn version --new-version $VERSION
+          yarn publish --tag latest
 
           # Get last tag name to compare the history
           LAST_TAG=$(git describe --tags --abbrev=0)
