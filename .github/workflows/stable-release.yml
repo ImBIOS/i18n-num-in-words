@@ -24,14 +24,14 @@ jobs:
       - name: Check for canary releases
         id: canary-check
         run: |
-          CANARY_EXISTS=$(node check-canary.js) # This script should output "true" or "false"
+          CANARY_EXISTS=$(node scripts/check-canary.js) # This script should output "true" or "false"
           echo "CANARY_EXISTS=$CANARY_EXISTS" >> $GITHUB_ENV
       - name: Test
         run: bun test
       - name: Build & Publish Latest if Canary Exists
         if: env.CANARY_EXISTS == 'true'
         run: |
-          VERSION=$(node determine-next-version.js)
+          VERSION=$(node scripts/determine-next-version.js)
           echo "VERSION=$VERSION" >> $GITHUB_ENV
 
           cd library
