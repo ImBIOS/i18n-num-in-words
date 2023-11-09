@@ -4,6 +4,8 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
   canary-release:
@@ -22,6 +24,7 @@ jobs:
       - name: Test
         run: bun test
       - name: Build & Publish Canary
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: |
           cd library
           VERSION=$(node -p "require('./package.json').version")-canary.$(date +%s)
