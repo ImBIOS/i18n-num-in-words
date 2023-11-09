@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          sparse-checkout: library
       - name: Install Bun
         uses: oven-sh/setup-bun@v1
       - name: Setup Node.js

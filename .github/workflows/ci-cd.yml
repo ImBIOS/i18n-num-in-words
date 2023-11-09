@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          sparse-checkout: library
       - name: Install Bun
         uses: oven-sh/setup-bun@v1
       - name: Setup Node.js
@@ -32,7 +34,7 @@ jobs:
           bun run build
           VERSION=$(node -p "require('./package.json').version")-canary.$(date +%s)
 
-          yarn version $VERSION --no-git-tag-version
-          yarn publish --tag canary
+          npm version $VERSION --no-git-tag-version
+          npm publish --tag canary
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
