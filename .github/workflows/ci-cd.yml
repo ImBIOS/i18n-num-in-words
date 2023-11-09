@@ -4,8 +4,12 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
+    paths:
+      - 'library/**/*'
   pull_request:
     branches: [main]
+    paths:
+      - 'library/**/*'
 
 jobs:
   ci-cd:
