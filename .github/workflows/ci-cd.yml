@@ -32,7 +32,7 @@ jobs:
           bun run build
           VERSION=$(node -p "require('./package.json').version")-canary.$(date +%s)
 
-          npm version $VERSION --no-git-tag-version
+          yarn version $VERSION --no-git-tag-version
           yarn publish --tag canary
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
