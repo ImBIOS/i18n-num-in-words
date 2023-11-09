@@ -21,7 +21,7 @@
     "lint": "turbo run lint",
     "dev": "turbo run dev"
   },
-  "devDependencies": {
+  "dependencies": {
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
     "bun-types": "latest",
