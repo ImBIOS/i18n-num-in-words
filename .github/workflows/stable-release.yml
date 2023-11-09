@@ -7,7 +7,7 @@ on:
     - cron: '0 0 1 * *'
 
 jobs:
-  monthly-release:
+  stable-release:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -21,6 +21,7 @@ jobs:
         with:
           node-version-file: '.node-version'
           registry-url: 'https://registry.npmjs.org'
+      - run: bun install
       - name: Check for canary releases
         id: canary-check
         run: |
