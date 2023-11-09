@@ -1,0 +1,35 @@
+name: Continuous Integration and Delivery
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  ci-cd:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v1
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.node-version'
+      - name: Install dependencies
+        run: bun install
+      - name: Test
+        run: bun test
+      - name: Build & Publish Canary
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+          cd library
+          VERSION=$(node -p "require('./package.json').version")-canary.$(date +%s)
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+          npm version $VERSION --no-git-tag-version
+          npm publish --tag canary
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
