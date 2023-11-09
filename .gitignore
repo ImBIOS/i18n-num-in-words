@@ -172,3 +172,6 @@ dist
 .idea
 
 tsconfig.tsbuildinfo
+build/**
+dist/**
+.next/**
