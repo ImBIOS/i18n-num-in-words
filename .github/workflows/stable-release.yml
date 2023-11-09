@@ -35,8 +35,8 @@ jobs:
 
           cd library
           bun run build
-          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
-          npm version $VERSION --no-git-tag-version
+
+          npm version $VERSION
           npm publish --tag latest
 
           # Set the Git user
@@ -55,7 +55,7 @@ jobs:
           # Push the tag to the repository
           git push origin $VERSION
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Create GitHub Release
         uses: ncipollo/release-action@v1
         if: env.CANARY_EXISTS == 'true'

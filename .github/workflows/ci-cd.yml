@@ -30,8 +30,8 @@ jobs:
           cd library
           bun run build
           VERSION=$(node -p "require('./package.json').version")-canary.$(date +%s)
-          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ./.npmrc
+
           npm version $VERSION --no-git-tag-version
           npm publish --tag canary
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
