@@ -29,7 +29,7 @@ const hasCanaryReleaseSinceLastStable = () => {
     if (!isCanary) return false;
 
     const versionDate = new Date(
-      execSync(`npm view ${packageName}@${version} time`).toString()
+      JSON.parse(execSync(`npm view ${packageName} time --json`))[`${version}`]
     );
     return versionDate > lastStableVersionDate;
   });
