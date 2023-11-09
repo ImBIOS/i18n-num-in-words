@@ -14,10 +14,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          sparse-checkout: library
-          sparse-checkout-cone-mode: false
-      - run: mv library/* .
       - name: Install Bun
         uses: oven-sh/setup-bun@v1
       - name: Setup Node.js
@@ -38,10 +34,11 @@ jobs:
           VERSION=$(node scripts/determine-next-version.js)
           echo "VERSION=$VERSION" >> $GITHUB_ENV
 
+          cd library
           bun run build
 
-          npm version $VERSION
-          npm publish --tag latest
+          yarn version --new-version $VERSION
+          yarn publish --tag latest
 
           # Set the Git user
           git config user.name github-actions
