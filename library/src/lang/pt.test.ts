@@ -1,9 +1,9 @@
 import { describe, expect, test } from 'bun:test';
 import { portugueseNumInWords } from './pt';
 
-describe.todo('Português', () => {
+describe('Português', () => {
   describe('Dígitos individuais', () => {
-    test.each<Array<[number, string]>>([
+    test.each<[number, string]>([
       [0, 'zero'],
       [1, 'um'],
       [2, 'dois'],
@@ -20,7 +20,7 @@ describe.todo('Português', () => {
   });
 
   describe('Dígitos duplos', () => {
-    test.each<Array<[number, string]>>([
+    test.each<[number, string]>([
       [10, 'dez'],
       [11, 'onze'],
       [12, 'doze'],
@@ -31,8 +31,8 @@ describe.todo('Português', () => {
     });
   });
 
-  describe('Dígitos triplos', () => {
-    test.each<Array<[number, string]>>([
+  describe.todo('Dígitos triplos', () => {
+    test.each<[number, string]>([
       [100, 'cem'],
       [101, 'cento e um'],
       [111, 'cento e onze'],
@@ -43,8 +43,8 @@ describe.todo('Português', () => {
     });
   });
 
-  describe('Milhares', () => {
-    test.each<Array<[number, string]>>([
+  describe.todo('Milhares', () => {
+    test.each<[number, string]>([
       [1000, 'mil'],
       [1001, 'mil e um'],
       [2001, 'dois mil e um'],
@@ -55,8 +55,8 @@ describe.todo('Português', () => {
     });
   });
 
-  describe('Milhões', () => {
-    test.each<Array<[number, string]>>([
+  describe.todo('Milhões', () => {
+    test.each<[number, string]>([
       [1000000, 'um milhão'],
       [2000001, 'dois milhões e um'],
       [
@@ -76,8 +76,8 @@ describe.todo('Português', () => {
     });
   });
 
-  describe('Bilhões', () => {
-    test.each<Array<[number, string]>>([
+  describe.todo('Bilhões', () => {
+    test.each<[number, string]>([
       [1000000000, 'um bilhão'],
       [2000000001, 'dois bilhões e um'],
       [
@@ -97,8 +97,8 @@ describe.todo('Português', () => {
     });
   });
 
-  describe('Trilhões', () => {
-    test.each<Array<[number, string]>>([
+  describe.todo('Trilhões', () => {
+    test.each<[number, string]>([
       [1000000000000, 'um trilhão'],
       [2000000000001, 'dois trilhões e um'],
       [

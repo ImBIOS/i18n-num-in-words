@@ -38,8 +38,7 @@ const pt = (num: number): string => {
 
   if (num >= 1_000_000_000_000)
     return processLargeNumbers(1_000_000_000_000, 'trilhão');
-  if (num >= 1_000_000_000)
-    return processLargeNumbers(1_000_000_000, 'bilhão');
+  if (num >= 1_000_000_000) return processLargeNumbers(1_000_000_000, 'bilhão');
   if (num >= 1_000_000) return processLargeNumbers(1_000_000, 'milhão');
 
   if (num >= 1_000) {
@@ -99,5 +98,5 @@ const pt = (num: number): string => {
 
 export const portugueseNumInWords = numInWordsFactory(pt, {
   lang: 'pt',
-  status: 'stable',
+  status: 'alpha',
 });
