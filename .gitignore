@@ -171,6 +171,7 @@ dist
 # IntelliJ based IDEs
 .idea
 
+.turbo
 tsconfig.tsbuildinfo
 build/**
 dist/**
