@@ -26,7 +26,6 @@ jobs:
       - name: Build & Publish Canary
         # if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         # TODO: For Debug only, allow only branch fix/cd
-        if: github.ref == 'refs/heads/fix/cd'
         run: |
           cd library
           VERSION=$(node -p "require('./package.json').version")-canary.$(date +%s)
