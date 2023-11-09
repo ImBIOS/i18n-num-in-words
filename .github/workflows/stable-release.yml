@@ -9,6 +9,8 @@ on:
 jobs:
   monthly-release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -29,10 +31,33 @@ jobs:
         if: env.CANARY_EXISTS == 'true'
         run: |
           VERSION=$(node determine-next-version.js)
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
           cd library
           bun run build
           echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
           npm version $VERSION --no-git-tag-version
           npm publish --tag latest
+
+          # Set the Git user
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+
+          # Get last tag name to compare the history
+          LAST_TAG=$(git describe --tags --abbrev=0)
+
+          # Create a new Git tag
+          git tag $VERSION
+
+          # Generate release notes from commits
+          echo "RELEASE_NOTES=$(git log ${LAST_TAG}..HEAD --pretty=format:'* %s (%h)' --reverse)" >> $GITHUB_ENV
+
+          # Push the tag to the repository
+          git push origin $VERSION
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Create GitHub Release
+        uses: ncipollo/release-action@v1
+        if: env.CANARY_EXISTS == 'true'
+        with:
+          tag: ${{ env.VERSION }}
