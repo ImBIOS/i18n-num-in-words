@@ -2,6 +2,7 @@
   "name": "website",
   "type": "module",
   "version": "0.0.1",
+  "private": true,
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -13,7 +14,7 @@
     "@astrojs/preact": "^3.0.0",
     "@astrojs/starlight": "^0.10.1",
     "astro": "^3.0.6",
-    "i18n-num-in-words": "workspace:../library",
+    "i18n-num-in-words": "workspace:*",
     "preact": "^10.17.1",
     "sharp": "^0.32.5"
   },
