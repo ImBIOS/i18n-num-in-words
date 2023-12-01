@@ -11,12 +11,10 @@ import {
 import { numInWordsFactory } from './num-in-words-factory';
 
 describe('numInWordsFactory', () => {
-  type ConsoleChildSpy = Mock<
-    () => {
-      (...data: unknown[]): void;
-      (message?: unknown, ...optionalParams: unknown[]): void;
-    }
-  >;
+  type ConsoleChildSpy = Mock<{
+    (...data: unknown[]): void;
+    (message?: unknown, ...optionalParams: unknown[]): void;
+  }>;
 
   // Mock console.warn and console.debug
   let warnSpy: ConsoleChildSpy;
@@ -41,7 +39,7 @@ describe('numInWordsFactory', () => {
 
   it('should warn when experimental is true', () => {
     const lang = 'en';
-    const fn = (num: number) => `one`;
+    const fn = () => `one`;
     const factory = numInWordsFactory(fn, { lang });
 
     factory(1, { experimental: true });
@@ -51,7 +49,7 @@ describe('numInWordsFactory', () => {
 
   it('should handle experimental false and non-stable status', () => {
     const lang = 'en';
-    const fn = (num: number) => `two`;
+    const fn = () => `two`;
     const factory = numInWordsFactory(fn, { lang, status: 'alpha' });
 
     const result = factory(2, {
@@ -68,7 +66,7 @@ describe('numInWordsFactory', () => {
     const staticNum = 3;
     const staticWord = 'three';
     const lang = 'en';
-    const fn = (num: number) => staticWord;
+    const fn = () => staticWord;
     const factory = numInWordsFactory(fn, { lang, status: 'stable' });
 
     const result = factory(staticNum, {
@@ -81,7 +79,7 @@ describe('numInWordsFactory', () => {
 
   it('should handle experimental false and default status', () => {
     const lang = 'en';
-    const fn = (num: number) => `four`;
+    const fn = () => `four`;
     const factory = numInWordsFactory(fn, { lang });
 
     const result = factory(4, { experimental: false });
@@ -94,7 +92,7 @@ describe('numInWordsFactory', () => {
 
   it('should return an error when experimental false and non-stable status', () => {
     const lang = 'en';
-    const fn = (num: number) => 'five';
+    const fn = () => 'five';
     const factory = numInWordsFactory(fn, { lang });
 
     const result = factory(5, {
@@ -123,7 +121,7 @@ describe('numInWordsFactory', () => {
     const staticNum = 6;
     const staticWord = 'six';
     const lang = 'en';
-    const fn = mock((num: number) => staticWord);
+    const fn = mock(() => staticWord);
     const factory = numInWordsFactory(fn, { lang });
 
     let res = factory(staticNum);
@@ -137,7 +135,7 @@ describe('numInWordsFactory', () => {
 
   it('should handle debug mode', () => {
     const lang = 'en';
-    const fn = (num: number) => 'seven';
+    const fn = () => 'seven';
     const factory = numInWordsFactory(fn, { lang });
 
     factory(7, { debug: true });
@@ -148,7 +146,7 @@ describe('numInWordsFactory', () => {
   it('should output debug message when debug is true, memoize is true, and cache is hit', () => {
     const staticNum = 8;
     const lang = 'en';
-    const fn = mock((num: number) => 'eight');
+    const fn = mock(() => 'eight');
     const factory = numInWordsFactory(fn, { lang });
 
     // Call the factory twice with the same number
