@@ -21,10 +21,9 @@ git config user.email "github-actions@github.com"
 
 # Get last tag name to compare the history
 echo "Getting last tag name"
-LAST_TAG=$(git describe --tags $(git rev-list --tags --max-count=1) 2>/dev/null) # Get the latest tag based on commit date
+LAST_TAG=$(git tag | tail -1)
 if [ -z "$LAST_TAG" ]; then
-  echo "No tags found in the repository. Exiting the script."
-  exit 0
+  LAST_TAG="$DEFAULT_LAST_TAG"
 fi
 echo "Last tag is $LAST_TAG"
 
