@@ -32,6 +32,6 @@ jobs:
           VERSION=$(node -p "require('./package.json').version")-canary.$(date +%s)
 
           yarn version --new-version $VERSION --no-git-tag-version
-          yarn publish --tag canary --provenance
+          npm publish --tag canary --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
