@@ -35,9 +35,14 @@ echo "RELEASE_NOTES=$RELEASE_NOTES" >>$GITHUB_ENV
 # Update the package.json version
 yarn version --new-version $VERSION
 
-# Commit and push changes if needed
-git commit -am "Release $VERSION"
-git push origin main
+# Check if there are changes to commit
+if git diff-index --quiet HEAD --; then
+  echo "No changes to commit. Skipping commit and push."
+else
+  # Commit and push changes if needed
+  git commit -am "Release $VERSION"
+  git push origin main
+fi
 
 # Push the tag to the repository
 git tag $VERSION
