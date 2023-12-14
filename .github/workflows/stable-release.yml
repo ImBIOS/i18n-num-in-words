@@ -52,7 +52,7 @@ jobs:
           git push origin $VERSION
 
           yarn version --new-version $VERSION
-          yarn publish --tag latest
+          yarn publish --tag latest --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Create GitHub Release
