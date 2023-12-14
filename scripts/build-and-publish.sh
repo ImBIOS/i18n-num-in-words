@@ -35,4 +35,4 @@ echo "RELEASE_NOTES=$(echo $RELEASE_NOTES | sed 's/"/\\"/g')"
 git push origin $VERSION
 
 yarn version --new-version $VERSION
-yarn publish --tag latest --provenance
+npm publish --provenance --access public --tag latest
