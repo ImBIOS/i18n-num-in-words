@@ -33,7 +33,9 @@ jobs:
         if: env.CANARY_EXISTS == 'true'
         run: |
           VERSION=$(node scripts/determine-next-version.js)
+          DEFAULT_LAST_TAG=$(node scripts/get-default-last-tag.js)
           echo "VERSION=$VERSION" >> $GITHUB_ENV
+          echo "DEFAULT_LAST_TAG=$DEFAULT_LAST_TAG" >> $GITHUB_ENV
 
           cd library
           bun run build
@@ -43,7 +45,10 @@ jobs:
           git config user.email github-actions@github.com
 
           # Get last tag name to compare the history
-          LAST_TAG=$(git describe --tags --abbrev=0)
+          LAST_TAG=$(git tag | tail -1)
+          if [ -z "$LAST_TAG" ]; then
+            LAST_TAG="$DEFAULT_LAST_TAG"
+          fi
 
           # Generate release notes from commits
           echo "RELEASE_NOTES=$(git log ${LAST_TAG}..HEAD --pretty=format:'* %s (%h)' --reverse)" >> $GITHUB_ENV
