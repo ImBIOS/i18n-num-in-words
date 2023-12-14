@@ -21,9 +21,10 @@ git config user.email "github-actions@github.com"
 
 # Get last tag name to compare the history
 echo "Getting last tag name"
-LAST_TAG=$(git describe --tags $(git rev-list --tags --max-count=1)) # Get the latest tag based on commit date
+LAST_TAG=$(git describe --tags $(git rev-list --tags --max-count=1) 2>/dev/null) # Get the latest tag based on commit date
 if [ -z "$LAST_TAG" ]; then
-  LAST_TAG="$DEFAULT_LAST_TAG"
+  echo "No tags found in the repository. Exiting the script."
+  exit 0
 fi
 echo "Last tag is $LAST_TAG"
 
@@ -42,3 +43,6 @@ git push origin main
 # Push the tag to the repository
 git tag $VERSION
 git push origin $VERSION
+
+# Publish the package to NPM
+npm publish --provenance --access public --tag latest
