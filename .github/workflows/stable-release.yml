@@ -25,13 +25,16 @@ jobs:
       - name: Check for canary releases
         id: canary-check
         run: |
-          CANARY_EXISTS=$(node scripts/check-canary.js) # This script should output "true" or "false"
+          CANARY_EXISTS=$(bun scripts/check-canary.js) # This script should output "true" or "false"
           echo "CANARY_EXISTS=$CANARY_EXISTS" >> $GITHUB_ENV
       - name: Test
         run: bun test
-      - name: Build & Publish Latest if Canary Exists
+      - name: Build Latest
         if: env.CANARY_EXISTS == 'true'
         run: ./scripts/build-and-publish.sh
+      - name: Publish Latest
+        if: env.CANARY_EXISTS == 'true'
+        run: npm publish --provenance --access public --tag latest
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Create GitHub Release
