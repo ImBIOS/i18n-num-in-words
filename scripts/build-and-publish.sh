@@ -28,7 +28,7 @@ echo "Last tag is $LAST_TAG"
 
 # Generate release notes from commits
 echo "Generating release notes"
-echo "RELEASE_NOTES=$(git log ${LAST_TAG}..HEAD --pretty=format:'* %s (%h)' --reverse)" >>$GITHUB_ENV
+echo "RELEASE_NOTES=$(git log --pretty=format:"%s" $LAST_TAG..HEAD)" >>$GITHUB_ENV
 echo "RELEASE_NOTES=$(echo $RELEASE_NOTES | sed 's/"/\\"/g')"
 
 # Push the tag to the repository
