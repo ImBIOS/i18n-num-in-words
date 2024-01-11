@@ -55,7 +55,7 @@ export const numInWordsFactory =
     {
       silent = true as Silent,
       memoize = true,
-      debug = process.env.NODE_ENV === 'development',
+      debug = false,
       experimental = true,
     }: NumInWordsOptions<Silent, CurrentStatus> = {}
   ): Silent extends true ? string : string | undefined => {
