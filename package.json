@@ -22,7 +22,7 @@
     "dev": "turbo run dev"
   },
   "dependencies": {
-    "@commitlint/cli": "^17.7.1",
+    "@commitlint/cli": "^18.4.4",
     "@commitlint/config-conventional": "^18.4.4",
     "bun-types": "latest",
     "husky": "^8.0.3",
