@@ -25,7 +25,7 @@
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^18.4.4",
     "bun-types": "latest",
-    "husky": "^8.0.3",
+    "husky": "^9.0.7",
     "prettier": "^3.0.3",
     "semver": "^7.5.4",
     "turbo": "^1.10.14",
