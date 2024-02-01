@@ -8,15 +8,17 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "up": "bunx npm-check-updates --interactive --format group --doctor --doctorTest \"bun run build\" --doctorInstall \"bun install\"",
+    "up-force": "bunx npm-check-updates --interactive --format group"
   },
   "dependencies": {
-    "@astrojs/preact": "^3.0.0",
-    "@astrojs/starlight": "^0.10.1",
-    "astro": "^3.0.6",
+    "@astrojs/preact": "^3.1.0",
+    "@astrojs/starlight": "^0.17.2",
+    "astro": "^4.2.8",
     "i18n-num-in-words": "workspace:*",
-    "preact": "^10.17.1",
-    "sharp": "^0.33.1"
+    "preact": "^10.19.3",
+    "sharp": "^0.33.2"
   },
   "overrides": {
     "react": "npm:@preact/compat@latest",
