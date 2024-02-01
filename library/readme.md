@@ -14,7 +14,7 @@ A small, zero-dependency JavaScript library for converting numbers to words in m
     - [yarn](#yarn)
     - [pnpm](#pnpm)
     - [bun](#bun)
-  - [Usage Example](#usage)
+  - [Usage Example](#usage-example)
     - [Indonesian](#indonesian)
     - [English](#english)
     - [Arabic](#arabic)
@@ -55,7 +55,7 @@ pnpm add i18n-num-in-words
 bun add i18n-num-in-words
 ```
 
-## Usage
+## Usage Example
 
 To convert numbers to words, first import the relevant function from the package.
 

@@ -56,17 +56,19 @@
     "lint.fix": "eslint . --fix",
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check .",
-    "type.check": "tsc --noEmit"
+    "type.check": "tsc --noEmit",
+    "up": "bunx npm-check-updates --interactive --format group --doctor --doctorTest \"bun run build\" --doctorInstall \"bun install\"",
+    "up-force": "bunx npm-check-updates --interactive --format group"
   },
   "devDependencies": {
-    "@types/eslint": "^8.44.2",
-    "@typescript-eslint/eslint-plugin": "^6.7.2",
-    "@typescript-eslint/parser": "^6.7.2",
+    "@types/eslint": "^8.56.2",
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
+    "@typescript-eslint/parser": "^6.20.0",
     "bun-types": "latest",
     "chokidar": "^3.5.3",
-    "concurrently": "^8.2.1",
-    "eslint": "^8.49.0",
+    "concurrently": "^8.2.2",
+    "eslint": "^8.56.0",
     "tsup": "^8.0.1",
-    "typescript": "^5.2.2"
+    "typescript": "^5.3.3"
   }
 }
