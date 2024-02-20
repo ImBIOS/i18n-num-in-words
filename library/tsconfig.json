@@ -15,7 +15,7 @@
     "forceConsistentCasingInFileNames": true,
     "allowJs": true,
     "types": [
-      "bun-types" // add Bun global
+      "bun-types", // add Bun global
     ],
 
     "checkJs": true,
@@ -25,8 +25,8 @@
     "noUncheckedIndexedAccess": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./src/*"]
-    }
+      "~/*": ["./src/*"],
+    },
   },
   "include": [
     ".",
@@ -36,7 +36,7 @@
     "**/*.tsx",
     "**/*.cjs",
     "**/*.mjs",
-    "**/*.js"
+    "**/*.js",
   ],
-  "exclude": ["node_modules", "dist"]
+  "exclude": ["node_modules", "dist"],
 }
