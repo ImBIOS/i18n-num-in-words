@@ -57,7 +57,8 @@
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check .",
     "type.check": "tsc --noEmit",
-    "up": "bunx npm-check-updates --interactive --format group --doctor --doctorTest \"bun run build\" --doctorInstall \"bun install\"",
+    "doctor": "bun run coverage && bun run lint && bun run fmt.check && bun run type.check && bun run build",
+    "up": "bunx npm-check-updates --interactive --format group --doctor --doctorTest \"bun run doctor\" --doctorInstall \"bun install\"",
     "up-force": "bunx npm-check-updates --interactive --format group"
   },
   "devDependencies": {

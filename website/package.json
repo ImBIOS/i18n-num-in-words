@@ -9,7 +9,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "up": "bunx npm-check-updates --interactive --format group --doctor --doctorTest \"bun run build\" --doctorInstall \"bun install\"",
+    "doctor": "bun doctor",
+    "up": "bunx npm-check-updates --interactive --format group --doctor --doctorTest \"bun run doctor\" --doctorInstall \"bun install\"",
     "up-force": "bunx npm-check-updates --interactive --format group"
   },
   "dependencies": {

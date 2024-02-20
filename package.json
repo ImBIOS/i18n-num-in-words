@@ -20,8 +20,9 @@
     "test": "turbo run test",
     "lint": "turbo run lint",
     "dev": "turbo run dev",
-    "up": "bunx npm-check-updates --interactive --format group --doctor --doctorTest \"bun run build\" --doctorInstall \"bun install\"",
-    "up-force": "bunx npm-check-updates --interactive --format group"
+    "doctor": "turbo run doctor",
+    "up": "turbo run up",
+    "up-force": "turbo run up-force"
   },
   "dependencies": {
     "@commitlint/cli": "^18.6.0",
