@@ -1,7 +1,7 @@
 {
   "name": "i18n-num-in-words",
   "description": "Convert numbers to words in any language.",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "license": "MIT",
   "author": "Imamuzzaki Abu Salam <imamuzzaki@gmail.com>",
   "homepage": "https://github.com/ImBIOS/i18n-num-in-words",
