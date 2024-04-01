@@ -39,7 +39,7 @@ describe('numInWordsFactory', () => {
 
   it('should warn when experimental is true', () => {
     const lang = 'en';
-    const fn = () => `one`;
+    const fn = () => 'one';
     const factory = numInWordsFactory(fn, { lang });
 
     factory(1, { experimental: true });
@@ -49,7 +49,7 @@ describe('numInWordsFactory', () => {
 
   it('should handle experimental false and non-stable status', () => {
     const lang = 'en';
-    const fn = () => `two`;
+    const fn = () => 'two';
     const factory = numInWordsFactory(fn, { lang, status: 'alpha' });
 
     const result = factory(2, {
@@ -79,7 +79,7 @@ describe('numInWordsFactory', () => {
 
   it('should handle experimental false and default status', () => {
     const lang = 'en';
-    const fn = () => `four`;
+    const fn = () => 'four';
     const factory = numInWordsFactory(fn, { lang });
 
     const result = factory(4, { experimental: false });
