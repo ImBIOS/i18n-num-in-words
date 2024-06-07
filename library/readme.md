@@ -4,6 +4,8 @@
 
 A small, zero-dependency JavaScript library for converting numbers to words in multiple languages. Optimized for both Node.js and browser environments. Star us on GitHub for more updates:
 
+[![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/package/i18n-num-in-words)
+[![NPM Downloads](https://img.shields.io/npm/dm/i18n-num-in-words?&style=flat-square)](https://www.npmjs.com/package/i18n-num-in-words)
 [![GitHub stars](https://img.shields.io/github/stars/ImBIOS/i18n-num-in-words.svg?style=social)](https://github.com/ImBIOS/i18n-num-in-words)
 
 - [i18n-num-in-words](#i18n-num-in-words)
