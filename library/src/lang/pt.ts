@@ -1,102 +1,86 @@
 import { numInWordsFactory } from '~/utils/num-in-words-factory';
 
-const units = [
-  'zero',
-  'um',
-  'dois',
-  'três',
-  'quatro',
-  'cinco',
-  'seis',
-  'sete',
-  'oito',
-  'nove',
-];
+const portugueseMegasSingular = ['', 'mil', 'milhão', 'mil milhões', 'bilião'];
+const portugueseMegasPlural = ['', 'mil', 'milhões', 'mil milhões', 'bilhões'];
+const portugueseUnits = ['', 'um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove'];
+const portugueseHundreds = ['', 'cem', 'duzentos', 'trezentos', 'quatrocentos', 'quinhentos', 'seiscentos', 'setecentos', 'oitocentos', 'novecentos', 'cento'];
+const portugueseTens = ['', 'dez', 'vinte', 'trinta', 'quarenta', 'cinquenta', 'sessenta', 'setenta', 'oitenta', 'noventa'];
+const portugueseTeens = ['dez', 'onze', 'doze', 'treze', 'catorze', 'quinze', 'dezasseis', 'dezasete', 'dezoito', 'dezanove'];
 
-const tensUnits = [
-  '',
-  '',
-  'vinte',
-  'trinta',
-  'quarenta',
-  'cinquenta',
-  'sessenta',
-  'setenta',
-  'oitenta',
-  'noventa',
-];
+function integerToTriplets(input: number): number[] {
+  const triplets: number[] = [];
+  while (input > 0) {
+    triplets.push(input % 1000);
+    input = Math.floor(input / 1000);
+  }
+  return triplets;
+}
+
 
 const pt = (num: number): string => {
-  const processLargeNumbers = (divisor: number, word: string): string => {
-    const quotient = Math.floor(num / divisor);
-    const remainder = num % divisor;
-    if (remainder === 0) {
-      return `${pt(quotient)} ${word}`;
+  let words: string[] = [];
+
+  if (num < 0) {
+    words.push('menos');
+    num *= -1;
+  }
+
+  const triplets = integerToTriplets(num);
+  if (triplets.length === 0) {
+    return 'zero';
+  }
+
+  for (let idx = triplets.length - 1; idx >= 0; idx--) {
+    const triplet = triplets[idx] as number
+
+    if (triplet === 0) {
+      continue;
     }
-    return `${pt(quotient)} ${word} ${pt(remainder)}`;
-  };
 
-  if (num >= 1_000_000_000_000)
-    return processLargeNumbers(1_000_000_000_000, 'trilhão');
-  if (num >= 1_000_000_000) return processLargeNumbers(1_000_000_000, 'bilhão');
-  if (num >= 1_000_000) return processLargeNumbers(1_000_000, 'milhão');
+    const hundreds = Math.floor((triplet) / 100) % 10;
+    const tens = Math.floor(triplet / 10) % 10;
+    const units = triplet % 10;
 
-  if (num >= 1_000) {
-    const thousands = Math.floor(num / 1_000);
-    const remainder = num % 1_000;
-    return thousands === 1
-      ? remainder === 0
-        ? 'mil'
-        : `mil ${pt(remainder)}`
-      : processLargeNumbers(1_000, 'mil');
-  }
+    if (hundreds > 0 && units === 0 && tens === 0) {
+      const word = idx === 0 && words.length !== 0
+        ? `e ${portugueseHundreds[hundreds]}`
+        : `${portugueseHundreds[hundreds]}`;
+      words.push(word);
+    } else if (hundreds > 0) {
+      const hundredWord = hundreds === 1 ? portugueseHundreds[10] : portugueseHundreds[hundreds];
+      words.push(`${hundredWord} e`);
+    }
 
-  if (num >= 100) {
-    const hundreds = Math.floor(num / 100);
-    const remainder = num % 100;
-    return hundreds === 1
-      ? remainder === 0
-        ? 'cem'
-        : `cento ${pt(remainder)}`
-      : processLargeNumbers(100, 'cento');
-  }
+    if (tens === 0 && units === 0) {
+      continue;
+    }
 
-  if (num >= 20) {
-    const tens = Math.floor(num / 10);
-    const remainder = num % 10;
-    return `${tensUnits[tens]}${remainder ? ' e ' + pt(remainder) : ''}`;
-  }
+    if (tens === 0) {
+      words.push(portugueseUnits[units] as string);
+    } else if (tens === 1) {
+      words.push(portugueseTeens[units] as string);
+    } else {
+      const word = units > 0
+        ? `${portugueseTens[tens]} e ${portugueseUnits[units]}`
+        : `${portugueseTens[tens]}`;
+      words.push(word);
+    }
 
-  if (num >= 10) {
-    const remainder = num % 10;
-    switch (remainder) {
-      case 0:
-        return 'dez';
-      case 1:
-        return 'onze';
-      case 2:
-        return 'doze';
-      case 3:
-        return 'treze';
-      case 4:
-        return 'catorze';
-      case 5:
-        return 'quinze';
-      case 6:
-        return 'dezesseis';
-      case 7:
-        return 'dezessete';
-      case 8:
-        return 'dezoito';
-      case 9:
-        return 'dezenove';
+    const mega = triplet === 1 ? portugueseMegasSingular[idx] : portugueseMegasPlural[idx];
+    if (mega) {
+      if (idx === 4 && triplets.slice(0, triplets.length - 1).reduce((sum, num) => sum + num, 0) !== 0) {
+        words.push('um');
+      } else if (idx === 1 && portugueseUnits[idx] === words[0]) {
+        words.shift();
+      }
+      words.push(mega);
     }
   }
 
-  return units[num] ?? 'Invalid';
+  return words.join(' ');
 };
 
 export const portugueseNumInWords = numInWordsFactory(pt, {
   lang: 'pt',
-  status: 'alpha',
+  status: 'beta',
 });

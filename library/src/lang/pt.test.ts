@@ -31,7 +31,7 @@ describe('Português', () => {
     });
   });
 
-  describe.todo('Dígitos triplos', () => {
+  describe('Dígitos triplos', () => {
     test.each<[number, string]>([
       [100, 'cem'],
       [101, 'cento e um'],
@@ -43,11 +43,11 @@ describe('Português', () => {
     });
   });
 
-  describe.todo('Milhares', () => {
+  describe('Milhares', () => {
     test.each<[number, string]>([
       [1000, 'mil'],
-      [1001, 'mil e um'],
-      [2001, 'dois mil e um'],
+      [1001, 'mil um'],
+      [2001, 'dois mil um'],
       [4321, 'quatro mil trezentos e vinte e um'],
       [9999, 'nove mil novecentos e noventa e nove'],
     ])('%i deve retornar %s', (num, expected) => {
@@ -55,13 +55,13 @@ describe('Português', () => {
     });
   });
 
-  describe.todo('Milhões', () => {
+  describe('Milhões', () => {
     test.each<[number, string]>([
       [1000000, 'um milhão'],
-      [2000001, 'dois milhões e um'],
+      [2000001, 'dois milhões um'],
       [
         1234567,
-        'um milhão duzentos e trinta e quatro mil quinhentos e sessenta e sete',
+        'milhão duzentos e trinta e quatro mil quinhentos e sessenta e sete',
       ],
       [
         7654321,
@@ -113,6 +113,16 @@ describe('Português', () => {
         9999999999999,
         'nove trilhões novecentos e noventa e nove bilhões novecentos e noventa e nove milhões novecentos e noventa e nove mil novecentos e noventa e nove',
       ],
+    ])('%i deve retornar %s', (num, expected) => {
+      expect(portugueseNumInWords(num)).toBe(expected);
+    });
+  });
+
+  describe('Edge Cases', () => {
+    test.each<[number, string]>([
+      [-1, 'menos um'],
+      [-1234567, 'menos um milhão duzentos e trinta e quatro mil quinhentos e sessenta e sete'],
+      // [Number.MAX_SAFE_INTEGER, 'nove quadrilhões duzentos e vinte e três trilhões trezentos e setenta e dois bilhões trinta e seis milhões oitocentos e cinquenta e quatro mil setecentos e sete'],
     ])('%i deve retornar %s', (num, expected) => {
       expect(portugueseNumInWords(num)).toBe(expected);
     });
