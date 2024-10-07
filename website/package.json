@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@astrojs/preact": "^3.5.1",
-    "@astrojs/starlight": "^0.25.1",
+    "@astrojs/starlight": "^0.28.3",
     "astro": "^4.12.2",
     "i18n-num-in-words": "workspace:*",
     "preact": "^10.22.1",
