@@ -14,7 +14,7 @@
     "up-force": "bunx npm-check-updates --interactive --format group"
   },
   "dependencies": {
-    "@astrojs/preact": "^3.5.1",
+    "@astrojs/preact": "^4.0.3",
     "@astrojs/starlight": "^0.28.3",
     "astro": "^4.12.2",
     "i18n-num-in-words": "workspace:*",
