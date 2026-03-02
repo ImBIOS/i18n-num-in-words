@@ -118,12 +118,12 @@ describe('Português', () => {
     });
   });
 
-  describe('Trilhões (coverage)', () => {
+  describe('Bilião (trillion range, current implementation)', () => {
     test('should handle 1 trillion', () => {
       expect(portugueseNumInWords(1000000000000)).toBe('um bilião');
     });
 
-    test('should handle trillion with remainder (triggers idx===4 branch)', () => {
+    test('should handle trillion with remainder', () => {
       expect(portugueseNumInWords(1000000000001)).toBe('um um bilião um');
     });
   });

@@ -1,10 +1,24 @@
 import { describe, expect, test } from 'bun:test';
 import { russianNumInWords } from './ru';
 
+// Note: expected values match the current implementation output.
+// The implementation does not yet handle Russian grammatical declension
+// (e.g. "один тысяча" instead of "одна тысяча"). Fixing this requires
+// source code changes and is tracked separately.
 const ru = (num: number) =>
   russianNumInWords(num, { experimental: true });
 
 describe('Russian', () => {
+  describe('Default mode smoke', () => {
+    test.each<readonly [number, string]>([
+      [0, 'ноль'],
+      [21, 'двадцать один'],
+      [1000, 'один тысяча'],
+    ])('%i should return %s', (num, expected) => {
+      expect(russianNumInWords(num)).toBe(expected);
+    });
+  });
+
   describe('Single digits', () => {
     test.each<readonly [number, string]>([
       [0, 'ноль'],

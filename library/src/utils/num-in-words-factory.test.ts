@@ -165,12 +165,22 @@ describe('numInWordsFactory', () => {
     const fn = mock((num: number) => `word-${num}`);
     const factory = numInWordsFactory(fn, { lang, status: 'stable' });
 
-    // Fill the cache beyond MAX_CACHE_SIZE to trigger LRU eviction
-    for (let i = 20000; i < 20000 + MAX_CACHE_SIZE + 2; i++) {
+    const first = 20000;
+
+    // Fill the cache beyond MAX_CACHE_SIZE to trigger eviction
+    for (let i = first; i < first + MAX_CACHE_SIZE + 2; i++) {
       factory(i);
     }
 
-    expect(fn).toHaveBeenCalled();
+    // The first entry should have been evicted, so calling it triggers recomputation
+    fn.mockClear();
+    factory(first);
+    expect(fn).toHaveBeenCalledTimes(1);
+
+    // A recent entry should still be cached (no recomputation)
+    fn.mockClear();
+    factory(first + MAX_CACHE_SIZE + 1);
+    expect(fn).toHaveBeenCalledTimes(0);
   });
 
   it('should skip memoization when memoize is false', () => {

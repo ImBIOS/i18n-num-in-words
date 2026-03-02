@@ -1,4 +1,4 @@
-import { describe, expect, it, spyOn, afterEach } from 'bun:test';
+import { describe, expect, it, spyOn, afterEach, afterAll } from 'bun:test';
 import { numInWords } from './num-in-words';
 
 describe('numInWords', () => {
@@ -6,6 +6,10 @@ describe('numInWords', () => {
 
   afterEach(() => {
     errorSpy.mockReset();
+  });
+
+  afterAll(() => {
+    errorSpy.mockRestore();
   });
 
   it('should convert numbers to English words', () => {
