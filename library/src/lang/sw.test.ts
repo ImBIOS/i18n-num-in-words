@@ -1,6 +1,14 @@
 import { describe, expect, test } from 'bun:test';
 import { swahiliNumInWords } from './sw';
 
+describe('Swahili - coverage', () => {
+  test('should return stub response for unimplemented language', () => {
+    expect(swahiliNumInWords(0, { experimental: true })).toBe(
+      'Not implemented yet!'
+    );
+  });
+});
+
 describe.todo('Kiswahili', () => {
   describe('Namba moja', () => {
     test.each<readonly [number, string]>([

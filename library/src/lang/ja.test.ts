@@ -1,6 +1,14 @@
 import { describe, expect, test } from 'bun:test';
 import { japaneseNumInWords } from './ja';
 
+describe('Japanese - coverage', () => {
+  test('should return stub response for unimplemented language', () => {
+    expect(japaneseNumInWords(0, { experimental: true })).toBe(
+      'Not implemented yet!'
+    );
+  });
+});
+
 describe.todo('日本語', () => {
   describe('単一の数字', () => {
     test.each<readonly [number, string]>([

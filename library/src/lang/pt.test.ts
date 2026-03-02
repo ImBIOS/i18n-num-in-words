@@ -118,6 +118,16 @@ describe('Português', () => {
     });
   });
 
+  describe('Trilhões (coverage)', () => {
+    test('should handle 1 trillion', () => {
+      expect(portugueseNumInWords(1000000000000)).toBe('um bilião');
+    });
+
+    test('should handle trillion with remainder (triggers idx===4 branch)', () => {
+      expect(portugueseNumInWords(1000000000001)).toBe('um um bilião um');
+    });
+  });
+
   describe('Edge Cases', () => {
     test.each<[number, string]>([
       [-1, 'menos um'],
