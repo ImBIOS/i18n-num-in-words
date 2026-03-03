@@ -82,8 +82,11 @@ describe('Mandarin Chinese', () => {
   });
 
   describe('Edge cases', () => {
-    test('should return "Not supported" for numbers in the gap range (10M-100M)', () => {
-      expect(chineseNumInWords(10000000)).toBe('Not supported');
+    test.each<readonly [number]>([
+      [10000000],
+      [99999999],
+    ])('should return "Not supported" for %i in the gap range (10M-100M)', (num) => {
+      expect(chineseNumInWords(num)).toBe('Not supported');
     });
   });
 });

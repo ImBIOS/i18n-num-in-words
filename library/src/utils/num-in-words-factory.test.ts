@@ -202,6 +202,6 @@ describe('numInWordsFactory', () => {
 
     expect(() =>
       factory(Number.MAX_SAFE_INTEGER + 1, { silent: false })
-    ).toThrow();
+    ).toThrow('is too large to be converted');
   });
 });

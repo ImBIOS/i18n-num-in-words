@@ -77,12 +77,24 @@ const en = (num: number): string => {
         return 'eleven';
       case 2:
         return 'twelve';
-      default:
-        return `${en(remainder)}teen`;
+      case 3:
+        return 'thirteen';
+      case 4:
+        return 'fourteen';
+      case 5:
+        return 'fifteen';
+      case 6:
+        return 'sixteen';
+      case 7:
+        return 'seventeen';
+      case 8:
+        return 'eighteen';
+      case 9:
+        return 'nineteen';
     }
   }
 
-  return units[num] ?? 'Invalid';
+  return units[num]!
 };
 
 export const englishNumInWords = numInWordsFactory(en, {
