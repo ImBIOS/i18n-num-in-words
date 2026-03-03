@@ -52,16 +52,12 @@ console.log(`Ratio: ${(i18nTime / ntwTime).toFixed(2)}x`);
 // Also test other languages
 console.log('\n=== Other Languages (i18n-num-in-words) ===\n');
 
-const languages = ['id', 'pt', 'ru', 'zh', 'ar', 'es'];
+const languages = ['en', 'id'];
 for (const lang of languages) {
   const start = performance.now();
   for (let i = 0; i < ITERATIONS; i++) {
     testCases.forEach((n) => {
-      try {
-        numInWords(n, { lang: lang as any });
-      } catch (e) {
-        // Ignore errors for unimplemented languages
-      }
+      numInWords(n, { lang: lang as any });
     });
   }
   const time = performance.now() - start;
