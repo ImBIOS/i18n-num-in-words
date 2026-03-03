@@ -2,65 +2,7 @@
   "name": "i18n-num-in-words",
   "description": "Convert numbers to words in any language.",
   "version": "1.0.6",
-  "license": "MIT",
   "author": "Imamuzzaki Abu Salam <imamuzzaki@gmail.com>",
-  "homepage": "https://github.com/ImBIOS/i18n-num-in-words",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ImBIOS/i18n-num-in-words.git"
-  },
-  "keywords": [
-    "modular",
-    "typescript",
-    "i18n",
-    "internationalization",
-    "converter",
-    "number",
-    "words",
-    "bundle-size",
-    "type-safe",
-    "runtime"
-  ],
-  "type": "module",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
-      },
-      "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/index.js"
-      }
-    }
-  },
-  "sideEffects": false,
-  "files": [
-    "dist"
-  ],
-  "publishConfig": {
-    "access": "public",
-    "provenance": true
-  },
-  "scripts": {
-    "playground": "bun ./playground.js",
-    "file.watch": "bun generate-files.ts && tsup -w",
-    "test": "bun test",
-    "test.watch": "bun test --watch",
-    "coverage": "bun test --coverage",
-    "dev": "concurrently \"bun:file.watch\" \"bun:test.watch\"",
-    "build": "tsup",
-    "lint": "eslint .",
-    "lint.fix": "eslint . --fix",
-    "fmt": "prettier --write .",
-    "fmt.check": "prettier --check .",
-    "type.check": "tsc --noEmit",
-    "doctor": "bun run coverage && bun run lint && bun run fmt.check && bun run type.check && bun run build",
-    "up": "bunx npm-check-updates --interactive --format group --doctor --doctorTest \"bun run doctor\" --doctorInstall \"bun install\"",
-    "up-force": "bunx npm-check-updates --interactive --format group"
-  },
   "devDependencies": {
     "@types/bun": "^1.1.6",
     "@types/eslint": "^9.6.0",
@@ -71,5 +13,73 @@
     "eslint": "^9.7.0",
     "tsup": "^8.2.2",
     "typescript": "^5.5.4"
-  }
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.js"
+      }
+    },
+    "./lang/*": {
+      "import": {
+        "types": "./dist/lang/*.d.ts",
+        "default": "./dist/lang/*.js"
+      },
+      "require": {
+        "types": "./dist/lang/*.d.cts",
+        "default": "./dist/lang/*.js"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://github.com/ImBIOS/i18n-num-in-words",
+  "keywords": [
+    "bundle-size",
+    "converter",
+    "i18n",
+    "internationalization",
+    "modular",
+    "number",
+    "runtime",
+    "type-safe",
+    "typescript",
+    "words"
+  ],
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ImBIOS/i18n-num-in-words.git"
+  },
+  "scripts": {
+    "build": "tsup",
+    "coverage": "bun test --coverage",
+    "dev": "concurrently \"bun:file.watch\" \"bun:test.watch\"",
+    "doctor": "bun run coverage && bun run lint && bun run fmt.check && bun run type.check && bun run build",
+    "file.watch": "bun generate-files.ts && tsup -w",
+    "fmt": "prettier --write .",
+    "fmt.check": "prettier --check .",
+    "lint": "eslint .",
+    "lint.fix": "eslint . --fix",
+    "playground": "bun ./playground.js",
+    "test": "bun test",
+    "test.watch": "bun test --watch",
+    "type.check": "tsc --noEmit",
+    "up": "bunx npm-check-updates --interactive --format group --doctor --doctorTest \"bun run doctor\" --doctorInstall \"bun install\"",
+    "up-force": "bunx npm-check-updates --interactive --format group"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "types": "./dist/index.d.ts"
 }
