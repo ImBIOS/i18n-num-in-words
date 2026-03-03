@@ -1,18 +1,6 @@
 {
   "name": "website",
-  "type": "module",
   "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "doctor": "bun run build",
-    "up": "bunx npm-check-updates --interactive --format group --doctor --doctorTest \"bun run doctor\" --doctorInstall \"bun install\"",
-    "up-force": "bunx npm-check-updates --interactive --format group"
-  },
   "dependencies": {
     "@astrojs/preact": "^3.5.1",
     "@astrojs/starlight": "^0.28.3",
@@ -24,5 +12,17 @@
   "overrides": {
     "react": "npm:@preact/compat@latest",
     "react-dom": "npm:@preact/compat@latest"
-  }
+  },
+  "private": true,
+  "scripts": {
+    "astro": "astro",
+    "build": "astro build",
+    "dev": "astro dev",
+    "doctor": "bun run build",
+    "preview": "astro preview",
+    "start": "astro dev",
+    "up": "bunx npm-check-updates --interactive --format group --doctor --doctorTest \"bun run doctor\" --doctorInstall \"bun install\"",
+    "up-force": "bunx npm-check-updates --interactive --format group"
+  },
+  "type": "module"
 }
