@@ -22,7 +22,7 @@
       },
       "require": {
         "types": "./dist/index.d.cts",
-        "default": "./dist/index.js"
+        "default": "./dist/index.cjs"
       }
     },
     "./lang/*": {
@@ -32,7 +32,7 @@
       },
       "require": {
         "types": "./dist/lang/*.d.cts",
-        "default": "./dist/lang/*.js"
+        "default": "./dist/lang/*.cjs"
       }
     }
   },
