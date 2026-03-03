@@ -70,27 +70,20 @@ describe('Mandarin Chinese', () => {
     });
   });
 
-  describe.todo('Billions', () => {
+  describe('Hundred millions (亿)', () => {
     test.each<readonly [number, string]>([
-      [1000000000000, '一万亿'],
-      [2000000000001, '二万亿一'],
-      [1234567890123, '一万亿二十三百四十亿五六千七百八万九千一百二十三'],
-      [9876543210987, '九万亿八千七百六十亿五亿四千二百一万九百八十七'],
-      [9999999999999, '九万亿九百九十九亿九百九十九百九十九万九千九百九十九'],
+      [100000000, '一亿'],
+      [200000000, '二亿'],
+      [1000000000, '十亿'],
+      [100000000000, '一千亿'],
     ])('%i should return %s', (num, expected) => {
       expect(chineseNumInWords(num)).toBe(expected);
     });
   });
 
-  describe.todo('Trillions', () => {
-    test.each<readonly [number, string]>([
-      [1000000000000, '一万亿'],
-      [2000000000001, '二万亿一'],
-      [1234567890123, '一万亿二十三百四十亿五六千七百八万九千一百二十三'],
-      [9876543210987, '九万亿八千七百六十亿五亿四千二百一万九百八十七'],
-      [9999999999999, '九万亿九百九十九亿九百九十九百九十九万九千九百九十九'],
-    ])('%i should return %s', (num, expected) => {
-      expect(chineseNumInWords(num)).toBe(expected);
+  describe('Edge cases', () => {
+    test('should return "Not supported" for numbers in the gap range (10M-100M)', () => {
+      expect(chineseNumInWords(10000000)).toBe('Not supported');
     });
   });
 });

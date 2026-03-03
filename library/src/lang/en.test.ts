@@ -24,6 +24,9 @@ describe('English', () => {
       [10, 'ten'],
       [11, 'eleven'],
       [12, 'twelve'],
+      [14, 'fourteen'],
+      [17, 'seventeen'],
+      [19, 'nineteen'],
       [21, 'twenty one'],
       [99, 'ninety nine'],
     ])('%i should return %s', (num, expected) => {

@@ -1,6 +1,14 @@
 import { describe, expect, test } from 'bun:test';
 import { marathiNumInWords } from './mr';
 
+describe('Marathi - coverage', () => {
+  test('should return stub response for unimplemented language', () => {
+    expect(marathiNumInWords(0, { experimental: true })).toBe(
+      'Not implemented yet!'
+    );
+  });
+});
+
 describe.todo('मराठी', () => {
   describe('एक अंक', () => {
     test.each<readonly [number, string]>([

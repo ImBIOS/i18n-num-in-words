@@ -1,6 +1,14 @@
 import { describe, expect, test } from 'bun:test';
 import { urduNumInWords } from './ur';
 
+describe('Urdu - coverage', () => {
+  test('should return stub response for unimplemented language', () => {
+    expect(urduNumInWords(0, { experimental: true })).toBe(
+      'Not implemented yet!'
+    );
+  });
+});
+
 describe.todo('اردو', () => {
   describe('انفرادی اعداد', () => {
     test.each<readonly [number, string]>([

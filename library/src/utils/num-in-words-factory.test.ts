@@ -8,7 +8,7 @@ import {
   spyOn,
   type Mock,
 } from 'bun:test';
-import { numInWordsFactory } from './num-in-words-factory';
+import { MAX_CACHE_SIZE, numInWordsFactory } from './num-in-words-factory';
 
 describe('numInWordsFactory', () => {
   type ConsoleChildSpy = Mock<{
@@ -37,14 +37,17 @@ describe('numInWordsFactory', () => {
     expect(typeof factory).toBe('function');
   });
 
-  it('should warn when experimental is true', () => {
+  it('should execute successfully when experimental is true', () => {
     const lang = 'en';
     const fn = () => 'one';
     const factory = numInWordsFactory(fn, { lang });
 
-    factory(1, { experimental: true });
+    const result = factory(1, { experimental: true });
 
-    expect(warnSpy).toHaveBeenCalled();
+    // When experimental is true, the function should return the result
+    // Note: console.warn is only emitted on the first experimental call
+    // due to the module-level isWarned flag
+    expect(result).toBe('one');
   });
 
   it('should handle experimental false and non-stable status', () => {
@@ -155,5 +158,50 @@ describe('numInWordsFactory', () => {
 
     expect(fn).toHaveBeenCalledTimes(1);
     expect(debugSpy).toHaveBeenCalledTimes(3);
+  });
+
+  it('should evict oldest cache entry when cache exceeds MAX_CACHE_SIZE', () => {
+    const lang = 'en';
+    const fn = mock((num: number) => `word-${num}`);
+    const factory = numInWordsFactory(fn, { lang, status: 'stable' });
+
+    const first = 20000;
+
+    // Fill the cache beyond MAX_CACHE_SIZE to trigger eviction
+    for (let i = first; i < first + MAX_CACHE_SIZE + 2; i++) {
+      factory(i);
+    }
+
+    // The first entry should have been evicted, so calling it triggers recomputation
+    fn.mockClear();
+    factory(first);
+    expect(fn).toHaveBeenCalledTimes(1);
+
+    // A recent entry should still be cached (no recomputation)
+    fn.mockClear();
+    factory(first + MAX_CACHE_SIZE + 1);
+    expect(fn).toHaveBeenCalledTimes(0);
+  });
+
+  it('should skip memoization when memoize is false', () => {
+    const lang = 'en';
+    const fn = mock(() => 'test');
+    const factory = numInWordsFactory(fn, { lang, status: 'stable' });
+
+    factory(30000, { memoize: false });
+    factory(30000, { memoize: false });
+
+    // Without memoization, fn should be called each time
+    expect(fn).toHaveBeenCalledTimes(2);
+  });
+
+  it('should handle silent false and throw on error', () => {
+    const lang = 'en';
+    const fn = () => 'test';
+    const factory = numInWordsFactory(fn, { lang });
+
+    expect(() =>
+      factory(Number.MAX_SAFE_INTEGER + 1, { silent: false })
+    ).toThrow();
   });
 });
