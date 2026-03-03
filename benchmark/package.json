@@ -1,0 +1,15 @@
+{
+  "name": "benchmark",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/number-to-words": "^1.2.3",
+    "i18n-num-in-words": "workspace:*",
+    "number-to-words": "^1.2.4"
+  },
+  "module": "index.ts",
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "private": true,
+  "type": "module"
+}

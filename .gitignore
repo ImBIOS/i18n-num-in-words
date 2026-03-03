@@ -177,3 +177,6 @@ build/**
 dist/**
 .next/**
 .vercel
+
+*.local.*
+.local/

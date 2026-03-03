@@ -1,6 +1,6 @@
 import { numInWordsFactory } from '~/utils/num-in-words-factory';
 
-const ur = (num: number): string => {
+const ur = (_num: number): string => {
   return 'Not implemented yet!';
 };
 

@@ -1,40 +1,42 @@
 {
   "name": "root",
   "description": "Converts numbers to words in any language.",
-  "version": "1.0.3",
-  "license": "MIT",
+  "version": "0.0.0",
   "author": "Imamuzzaki Abu Salam <imamuzzaki@gmail.com>",
-  "homepage": "https://github.com/ImBIOS/i18n-num-in-words",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ImBIOS/i18n-num-in-words"
-  },
-  "private": true,
-  "workspaces": [
-    "library",
-    "website"
-  ],
-  "scripts": {
-    "prepare": "husky",
-    "build": "turbo run build",
-    "test": "turbo run test",
-    "lint": "turbo run lint",
-    "dev": "turbo run dev",
-    "doctor": "bun run lint && bun run test && bun run build",
-    "up": "bunx npm-check-updates --interactive --format group --doctor --doctorTest \"bun run doctor\" --doctorInstall \"bun install\"",
-    "up-force": "bunx npm-check-updates --interactive --format group"
-  },
-  "dependencies": {
+  "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
+    "@types/bun": "^1.1.6",
     "husky": "^9.1.1",
     "prettier": "^3.3.3",
     "semver": "^7.6.3",
     "turbo": "^2.0.9",
     "typescript": "^5.5.4"
   },
+  "homepage": "https://github.com/ImBIOS/i18n-num-in-words",
+  "license": "MIT",
   "packageManager": "bun@1.1.20",
-  "devDependencies": {
-    "@types/bun": "^1.1.6"
-  }
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ImBIOS/i18n-num-in-words"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "doctor": "bun run lint && bun run test && bun run build",
+    "format:ws": "bun x syncpack@alpha format",
+    "lint": "turbo run lint",
+    "lint:ws": "bun x sherif@latest",
+    "postinstall": "bun run format:ws; bun run lint:ws",
+    "prepare": "husky",
+    "test": "turbo run test",
+    "up": "bun x npm-check-updates --interactive --format group --doctor --doctorTest \"bun run doctor\" --doctorInstall \"bun install\"",
+    "up-force": "bun x npm-check-updates --interactive --format group"
+  },
+  "workspaces": [
+    "library",
+    "website",
+    "benchmark"
+  ]
 }
