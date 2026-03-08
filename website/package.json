@@ -2,7 +2,7 @@
   "name": "website",
   "version": "0.0.1",
   "dependencies": {
-    "@astrojs/preact": "^3.5.1",
+    "@astrojs/preact": "^4.0.4",
     "@astrojs/starlight": "^0.28.3",
     "astro": "^4.12.2",
     "i18n-num-in-words": "workspace:*",
